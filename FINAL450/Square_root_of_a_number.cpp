@@ -1,5 +1,5 @@
 //https://leetcode.com/problems/sqrtx/
-//Square root of a number
+//Square root of an integer
 
 class Solution {
 public:
