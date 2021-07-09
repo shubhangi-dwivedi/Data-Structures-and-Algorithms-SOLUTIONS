@@ -8,7 +8,7 @@ public:
         int l=s.length();
         transform(s.begin(), s.end(), s.begin(), ::toupper);
         for(int i=0;i<l;i++)
-            if((s[i]>='a' && s[i]<='z') || (s[i]>='A' && s[i]<='Z') || (s[i]>='0' && s[i]<='9'))
+            if((s[i]>='A' && s[i]<='Z') || (s[i]>='0' && s[i]<='9'))
                 res+=s[i];
             
         int l2=res.size();
