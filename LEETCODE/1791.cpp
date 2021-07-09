@@ -15,7 +15,7 @@ public:
         }
         
         for(auto i: m)
-            if(i.second==n1-1)
+            if(i.second==n1)
                 return i.first;
         
         return -1;
