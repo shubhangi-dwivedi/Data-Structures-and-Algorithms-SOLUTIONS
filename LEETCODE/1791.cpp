@@ -14,9 +14,8 @@ public:
                 m[edges[i][1]]++;
         }
         
-        int m1=m.size();
         for(auto i: m)
-            if(i.second==m1-1)
+            if(i.second==n1-1)
                 return i.first;
         
         return -1;
