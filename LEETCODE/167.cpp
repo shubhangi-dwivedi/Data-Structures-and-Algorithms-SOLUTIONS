@@ -1,5 +1,7 @@
 //167. Two Sum II - Input array is sorted
 
+
+//method 1
 class Solution {
 public:
     vector<int> twoSum(vector<int>& numbers, int target) 
@@ -28,5 +30,39 @@ public:
             }
         
         return res;
+        }
+};
+
+
+//method 2
+class Solution {
+public:
+    vector<int> twoSum(vector<int>& numbers, int target) 
+    {
+         int n=numbers.size();
+        vector <pair<int,int>> res(n);
+        
+        
+        for(int i=0;i<n;i++)
+            res[i]={numbers[i],i};
+       
+        
+        vector<int> v;
+        int j=n-1;
+        for(int i=0;i<n;)
+        {
+            if(res[i].first+res[j].first==target)
+            {
+                v.push_back(res[i].second+1);
+                v.push_back(res[j].second+1);
+                break;
+            }
+            else if(res[i].first+res[j].first>target)
+                j--;
+            else
+                i++;
+        }
+        
+        return v;
         }
 };
