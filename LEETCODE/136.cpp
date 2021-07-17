@@ -1,5 +1,6 @@
 //136. Single Number
 
+//using unordered map
 class Solution {
 public:
     int singleNumber(vector<int>& nums) 
@@ -17,5 +18,19 @@ public:
         }
         
         return -1;
+    }
+};
+
+//using bit manipulation
+class Solution {
+public:
+    int singleNumber(vector<int>& nums) {
+        int n=nums.size();
+        int res=nums[0];
+        
+        for(int i=1;i<n;i++)
+            res^=nums[i];
+        
+        return res;
     }
 };
