@@ -42,6 +42,9 @@ public:
         if(n<=1)
             return n;
         
+        if(dp[n]!=-1)
+            return dp[n];
+        
         dp[n]=calc(n-1,dp)+calc(n-2,dp);
         
         return dp[n];
