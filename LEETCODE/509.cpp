@@ -1,6 +1,6 @@
 //509. Fibonnaci Number
 
-//using for loop
+//method-1
 class Solution {
 public:
     int fib(int n) 
@@ -27,7 +27,7 @@ public:
 };
 
 
-//method-2 using dynamic programming
+//method-2 
 class Solution {
 public:
     int fib(int n) {
