@@ -1,5 +1,6 @@
 //509. Fibonnaci Number
 
+//using for loop
 class Solution {
 public:
     int fib(int n) 
@@ -22,5 +23,27 @@ public:
             }
         }
         return sum;
+    }
+};
+
+
+//method-2 using dynamic programming
+class Solution {
+public:
+    int fib(int n) {
+        
+        vector<int> dp(n+1,-1);
+        int ans=calc(n, dp);
+        
+        return ans;
+    }
+    
+    int calc(int n, vector<int> &dp){
+        if(n<=1)
+            return n;
+        
+        dp[n]=calc(n-1,dp)+calc(n-2,dp);
+        
+        return dp[n];
     }
 };
