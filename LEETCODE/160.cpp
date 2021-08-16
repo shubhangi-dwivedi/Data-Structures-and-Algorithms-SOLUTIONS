@@ -8,6 +8,14 @@
  *     ListNode(int x) : val(x), next(NULL) {}
  * };
  */
+/**
+ * Definition for singly-linked list.
+ * struct ListNode {
+ *     int val;
+ *     ListNode *next;
+ *     ListNode(int x) : val(x), next(NULL) {}
+ * };
+ */
 class Solution {
 public:
     ListNode *getIntersectionNode(ListNode *headA, ListNode *headB) {
@@ -30,17 +38,15 @@ public:
         }
         
         ListNode * res=NULL;
-        bool end=false;
         
         do{
             if(A.top()==B.top()){
                 res=A.top();
                 A.pop(),B.pop();
             }
-            else{
-                end=true;
-            }
-        }while(!end && !A.empty() && !B.empty());
+            else
+                break;
+        }while(!A.empty() && !B.empty());
         
         return res;
     }
