@@ -11,6 +11,9 @@
  *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
  * };
  */
+
+
+//method-1
 class Solution {
 public:
     bool isValidBST(TreeNode* root) {
@@ -34,5 +37,29 @@ public:
         checkBST(root->left,res);
         res.push_back(root->val);
         checkBST(root->right,res);
+    }
+};
+
+
+
+//method-2
+class Solution {
+public:
+    bool validate(TreeNode* root,long long  lower,long long upper)
+    {
+        if(!root)
+            return true;
+        if(root->val<=lower || root->val >=upper)
+            return false;
+        return validate(root->left,lower,root->val) && validate(root->right,root->val,upper);
+        
+    }
+    bool isValidBST(TreeNode* root) {
+        long long upper=LLONG_MAX;
+        long long  lower=LLONG_MIN;
+
+        
+        return validate(root,lower,upper);
+        
     }
 };
