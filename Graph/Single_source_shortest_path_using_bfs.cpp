@@ -50,6 +50,7 @@ class Graph{
                 }
             }
 
+            //prints dist. to every node
             for(auto node_pair:l){
                 T node=node_pair.first;
                 int d=dist[node];
