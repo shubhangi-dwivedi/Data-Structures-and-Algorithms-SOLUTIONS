@@ -1,6 +1,6 @@
 //42. Trapping Rain Water
 
-//method 1 (TLE)
+//method 1 (TLE) - brute force
 class Solution {
 public:
     int trap(vector<int>& height) {
