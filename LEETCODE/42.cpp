@@ -1,6 +1,30 @@
 //42. Trapping Rain Water
 
-//method 1
+//method 1 (TLE)
+class Solution {
+public:
+    int trap(vector<int>& height) {
+        
+        int n=height.size();
+        int res=0;
+        
+        for(int i=0;i<n;i++){
+            int l_max=0,r_max=0;
+            
+            for(int j=0;j<=i;j++)
+                l_max=max(l_max,height[j]);
+            
+             for(int j=i;j<n;j++)
+                r_max=max(r_max,height[j]);
+            
+            res+=min(l_max,r_max)-height[i];
+        }
+        
+        return res;
+    }
+};
+
+//methd 2
 class Solution {
 public:
     int trap(vector<int>& height) {
