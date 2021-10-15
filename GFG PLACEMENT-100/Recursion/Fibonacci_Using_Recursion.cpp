@@ -9,6 +9,7 @@ using namespace std;
 
 class Solution{
     public:
+	
     //Complete this function
     int fibonacci(int n)
     {
@@ -19,6 +20,7 @@ class Solution{
         return fibonacci(n-1)+fibonacci(n-2);
     }
 };
+
 
 // { Driver Code Starts.
 int main() {
