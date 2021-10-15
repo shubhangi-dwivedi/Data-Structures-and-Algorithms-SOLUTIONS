@@ -13,6 +13,7 @@ using namespace std;
 
 class Solution{
   public:
+
     // Complete this function
     int sumOfDigits(int n)
     {
