@@ -127,6 +127,39 @@ struct Node
  */
 
 //Function to return a list containing elements of left view of the binary tree.
+//Method-1 (recursive approach)
+void view(vector<int> &res,Node *root,int &max_lvl,int lvl){
+    if(root==NULL)
+        return;
+    
+    if(max_lvl<lvl){
+        res.push_back(root->data);
+        max_lvl=lvl;
+    }
+    
+    view(res,root->left,max_lvl,lvl+1);
+    view(res,root->right,max_lvl,lvl+1);
+}
+
+vector<int> leftView(Node *root)
+{
+   // Your code here
+   vector<int> res;
+   
+   if(root==NULL)
+    return res;
+   
+   int max_lvl=0;
+   int lvl=1;
+   
+   view(res,root,max_lvl,lvl);
+   
+   return res;
+}
+
+
+//Function to return a list containing elements of left view of the binary tree.
+//Method-2 (iterative approach (using level order traversal))
 vector<int> leftView(Node *root)
 {
    // Your code here
