@@ -1,15 +1,15 @@
-1. Preorder Traversal
-2. Inorder Traversal
-3. Postorder Traversal
-4. Height of Binary Tree
-5. Determine if Two Trees are Identical
-6. Children Sum Parent
-7. Level order traversal
-8. Level order traversal Line by Line
+1. Preorder Traversal   - Done
+2. Inorder Traversal    - Done
+3. Postorder Traversal  - Done
+4. Height of Binary Tree    -Done
+5. Determine if Two Trees are Identical     -Done
+6. Children Sum Parent  - Done
+7. Level order traversal    - Done
+8. Level order traversal Line by Line   - Done
 9. Level order traversal in spiral form
-10. Maximum Width of Tree
-11. Check for Balanced Tree
-12. Left View of Binary Tree
+10. Maximum Width of Tree   - Done
+11. Check for Balanced Tree     - Done
+12. Left View of Binary Tree    - Done
 13. Right View of Binary Tree
 14. Lowest Common Ancestor in a Binary Tree
 15. Diameter of a Binary Tree
