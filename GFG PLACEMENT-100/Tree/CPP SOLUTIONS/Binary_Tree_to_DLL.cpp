@@ -111,6 +111,8 @@ class Solution
 {
     public: 
     //Function to convert binary tree to doubly linked list and return it.
+
+    //when prev==NULL this condition is used to determine the head of DLL
     Node *prev=NULL;
     Node * bToDLL(Node *root)
     {
