@@ -98,7 +98,7 @@ class Solution {
   public:
     // Function to return the diameter of a Binary Tree.
 
-    //METHOD-1
+    //METHOD-1      O(N^2)
     int height(Node* root){
         if(root==NULL)
             return 0;
