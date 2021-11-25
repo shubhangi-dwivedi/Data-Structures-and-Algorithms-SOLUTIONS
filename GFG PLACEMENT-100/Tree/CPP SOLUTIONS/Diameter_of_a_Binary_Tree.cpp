@@ -12,6 +12,7 @@ struct Node {
     struct Node* left;
     struct Node* right;
 };
+
 Node* newNode(int val) {
     Node* temp = new Node;
     temp->data = val;
