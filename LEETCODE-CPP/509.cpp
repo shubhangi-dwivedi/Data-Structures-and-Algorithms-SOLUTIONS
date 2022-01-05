@@ -1,6 +1,6 @@
 //509. Fibonnaci Number
 
-//method-1
+//method-1 (brute force)
 class Solution {
 public:
     int fib(int n) 
@@ -27,7 +27,7 @@ public:
 };
 
 
-//method-2 
+//method-2 (memoization/ top-bottom)
 class Solution {
 public:
     int fib(int n) {
@@ -48,5 +48,25 @@ public:
         dp[n]=calc(n-1,dp)+calc(n-2,dp);
         
         return dp[n];
+    }
+};
+
+
+//method-3 (tabulation/ bottom-up)
+class Solution {
+public:
+    int fib(int n) {
+        vector<int> res(n+1);
+        
+        if(n==0 || n==1)
+            return n;
+        
+        res[0]=0;
+        res[1]=1;
+        
+        for(int i=2;i<=n;i++)
+            res[i]=res[i-1]+res[i-2];
+        
+        return res[n];
     }
 };
