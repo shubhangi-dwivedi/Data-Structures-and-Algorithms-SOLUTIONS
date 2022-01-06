@@ -28,3 +28,35 @@ public:
         
     }
 };
+
+
+//Method-2 (memoization/top-bottom) *TLE* time complexity= O(mn)
+class Solution {
+public:
+   
+    int longestCommonSubsequence(string t1, string t2) {
+        
+        int m=t1.length();
+        int n=t2.length();
+        vector<vector<int>> memo(m+1, vector<int> (n+1,-1));
+        
+        int res= calc(memo,t1,t2,m,n);
+        
+        return res;
+    }
+    
+    int calc(vector<vector<int>> &memo,string t1, string t2, int m, int n){
+        if(m==0 || n==0)
+            return 0;
+        
+        if(memo[m][n]!=-1)
+            return memo[m][n];
+        else{
+            if(t1[m-1]==t2[n-1])
+                return memo[m][n]=1+calc(memo,t1,t2,m-1,n-1);
+            else
+                return memo[m][n]=max(calc(memo,t1,t2,m-1,n),
+                               calc(memo,t1,t2,m,n-1));
+        }
+    }
+};
