@@ -60,3 +60,68 @@ public:
         }
     }
 };
+
+//Method-3 (tabulation/ bottom-up) Time complexity= O(mn) (no TLE)
+
+//a
+class Solution {
+public:
+   
+    int longestCommonSubsequence(string t1, string t2) {
+        
+        int m=t1.length();
+        int n=t2.length();
+        vector<vector<int>> tabulation(m+1, vector<int> (n+1,-1));
+        
+        int res= calc(tabulation,t1,t2,m,n);
+        
+        return res;
+    }
+    
+    int calc(vector<vector<int>> &tabulation,string t1, string t2, int m, int n){
+      
+        for(int i=0;i<m+1;i++)
+          tabulation[i][0]=0;
+        
+        for(int i=0;i<n+1;i++)
+          tabulation[0][i]=0;
+        
+        for(int i=1;i<m+1;i++)
+            for(int j=1;j<n+1;j++){
+                if(t1[i-1]==t2[j-1])
+                    tabulation[i][j]=1+tabulation[i-1][j-1];
+                else
+                    tabulation[i][j]=max(tabulation[i-1][j],tabulation[i][j-1]);
+            }
+        
+        return tabulation[m][n];
+    }
+};
+
+//b (clean code)
+class Solution {
+public:
+   
+    int longestCommonSubsequence(string t1, string t2) {
+        
+        int m=t1.length();
+        int n=t2.length();
+        vector<vector<int>> tabulation(m+1, vector<int> (n+1,-1));
+        
+        for(int i=0;i<m+1;i++)
+          tabulation[i][0]=0;
+        
+        for(int i=0;i<n+1;i++)
+          tabulation[0][i]=0;
+        
+        for(int i=1;i<m+1;i++)
+            for(int j=1;j<n+1;j++){
+                if(t1[i-1]==t2[j-1])
+                    tabulation[i][j]=1+tabulation[i-1][j-1];
+                else
+                    tabulation[i][j]=max(tabulation[i-1][j],tabulation[i][j-1]);
+            }
+        
+        return tabulation[m][n];
+    }
+};
