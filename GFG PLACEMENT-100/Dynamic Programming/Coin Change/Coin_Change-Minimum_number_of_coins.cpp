@@ -15,6 +15,8 @@ class Solution
     public:
     //Function to find the minimum number of coins to make the change 
     //for value using the coins of given denominations.
+
+    //Method-1 Tabulation
     long long minimumNumberOfCoins(int coins[],int numberOfCoins,int value)
     {
         // your code here
