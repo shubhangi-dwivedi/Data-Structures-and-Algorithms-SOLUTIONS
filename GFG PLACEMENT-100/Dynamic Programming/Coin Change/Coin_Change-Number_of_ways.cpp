@@ -18,6 +18,7 @@ class Solution
     //sum up to a certain required value.
     long long numberOfWays(int coins[],int numberOfCoins,int value)
     {
+        //Method-1 Tabulation
         int m=value, n=numberOfCoins;
         
         vector<vector<long long>> dp(m+1,vector<long long>(n+1, 0));
