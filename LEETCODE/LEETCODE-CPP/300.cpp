@@ -26,3 +26,40 @@ public:
     }
         
 };
+
+//Method-2 (Binary Search) (Time complexity - O(nlogn))
+class Solution {
+public:
+    int lengthOfLIS(vector<int>& nums) {
+        int n=nums.size();
+        vector<int> tail;
+        int len=1;
+        
+        tail.push_back(nums[0]); //tail[0]=nums[0]
+        
+        for(int i=1;i<n;i++){
+            if(nums[i]>tail[len-1]){
+                tail.push_back(nums[i]);
+                len++;
+            }
+            else{
+                int x= ceilIdx(tail,0,len-1,nums[i]);
+                tail[x]=nums[i];
+            }
+        }
+        
+        return len;
+    }
+    
+    int ceilIdx(vector<int> tail, int s, int e, int x){
+        while(e>s){
+            int m=s+(e-s)/2;
+            
+            if(tail[m]>=x)
+                e=m;
+            else
+                s=m+1;
+        }
+        return e;
+    }
+};
