@@ -33,6 +33,41 @@ class Solution
            
         return res;
     }
+
+    //METHOD-2 (BINARY SEARCH) (Time complexity - O(nlogn))
+    int longestSubsequence(int n, int a[])
+    {
+       // your code here
+        vector<int> tail;
+        int len=1;
+        tail.push_back(a[0]); //tail[0]=a[0]
+        
+        for(int i=1;i<n;i++){
+            if(a[i]>tail[len-1]){
+                tail.push_back(a[i]);
+                len++;
+            }
+            else{
+                int x=ceilIndex(tail,0,len-1,a[i]);
+                tail[x]=a[i];
+            }
+        }
+        
+        return len;
+    }
+    
+    int ceilIndex(vector<int> tail, int s, int e, int x){
+        while(e>s){
+            int m=s+(e-s)/2;
+            
+            if(tail[m]>=x)
+                e=m;
+            else
+                s=m+1;
+        }
+        
+        return e;
+    }
 };
 
 // { Driver Code Starts.
