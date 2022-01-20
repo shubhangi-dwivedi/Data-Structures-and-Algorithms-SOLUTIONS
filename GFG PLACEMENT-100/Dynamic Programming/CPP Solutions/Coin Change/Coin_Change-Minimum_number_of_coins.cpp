@@ -16,7 +16,7 @@ class Solution
     //Function to find the minimum number of coins to make the change 
     //for value using the coins of given denominations.
 
-    //Method-1 Tabulation
+    //Method-1 Tabulation (space- O(m*n))
     long long minimumNumberOfCoins(int coins[],int numberOfCoins,int value)
     {
         // your code here
@@ -39,6 +39,26 @@ class Solution
             }
             
         return dp[m][n]!=INT_MAX-1? dp[m][n]:-1;
+    }
+
+	//Method-2 Tabulation (space- O(val))
+	long long minimumNumberOfCoins(int coins[],int numberOfCoins,int val)
+    {
+        // your code here
+        int n=numberOfCoins;
+        
+        vector<int> dp(val+1,INT_MAX);
+        dp[0]=0;
+        
+        for(int i=1;i<=val;i++)
+            for(int j=0;j<n;j++){
+                if(coins[j]<=i){
+                    int sub_res=dp[i-coins[j]];
+                    if(sub_res!=INT_MAX)
+                        dp[i]=min(dp[i],sub_res+1);
+                }
+            }
+        return dp[val]==INT_MAX? -1:dp[val];
     }
 };
 
