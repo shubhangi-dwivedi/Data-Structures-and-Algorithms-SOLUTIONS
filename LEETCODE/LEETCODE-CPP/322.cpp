@@ -1,7 +1,7 @@
 //322. Coin Change
+//https://leetcode.com/problems/coin-change/
 
-
-//Method-1 tabulation
+//Method-1 tabulation (space: O(m*n), time: O(m*n))
 class Solution {
 public:
     int coinChange(vector<int>& coins, int amount) {
@@ -33,5 +33,28 @@ public:
             }
         
         return dp[m][n]!=INT_MAX-1 ? dp[m][n]:-1;
+    }
+};
+
+
+//Method-2 DP-tabulation (space: O(amt), time=O(amt*n))
+class Solution {
+public:
+    int coinChange(vector<int>& coins, int amt) {
+        int n=coins.size();
+        vector<int>dp(amt+1,INT_MAX);
+        
+        dp[0]=0;
+        
+        for(int i=1;i<=amt;i++)
+            for(int j=0;j<n;j++){
+                if(coins[j]<=i){
+                    int sub_res=dp[i-coins[j]];
+                    if(sub_res!=INT_MAX)
+                        dp[i]=min(dp[i],sub_res+1);
+                }
+            }
+        
+        return dp[amt]==INT_MAX? -1:dp[amt];
     }
 };
