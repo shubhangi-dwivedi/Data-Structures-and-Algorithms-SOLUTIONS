@@ -10,6 +10,8 @@ public:
             sum+=nums[i];
         
         if(sum%2==0){
+
+            //subset sum solution
             int new_sum=sum/2;
             int dp[n+1][new_sum+1];
             
