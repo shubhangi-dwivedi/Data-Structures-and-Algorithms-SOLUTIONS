@@ -17,7 +17,8 @@ public:
         
         x=(sum+target)/2;
         
-        if(sum<target || (sum+target)%2 !=0)
+        //imp.
+        if(sum<target || (sum+target)%2 !=0) 
             return 0;
         
         int dp[n+1][x+1];
