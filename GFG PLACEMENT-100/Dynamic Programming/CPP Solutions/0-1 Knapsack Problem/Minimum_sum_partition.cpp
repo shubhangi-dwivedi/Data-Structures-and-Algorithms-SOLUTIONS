@@ -11,7 +11,7 @@ class Solution{
 //Method-1 DP (space- n*range)
   public:
   vector<int> v;
- void sub(int arr[],int n,int range)
+void sub(int arr[],int n,int range)
  {
     // subset sum logic & equal sum partition
     bool dp[n+1][range+1];
@@ -42,7 +42,7 @@ class Solution{
     for(int j=0;j<=range/2;j++)
     {
        if(dp[n][j]==true)
-        v.push_back(j);
+            v.push_back(j);
     }
  }
              
@@ -61,7 +61,7 @@ class Solution{
         for(int i=0;i<v.size();i++)
         {
             if(range-2*v[i]<mn)
-            mn=range-2*v[i];
+                mn=range-2*v[i];
         }
         
     return mn;
