@@ -1,5 +1,5 @@
 //234. Palindrome Linked List
-
+//https://leetcode.com/problems/palindrome-linked-list/
 
 /**
  * Definition for singly-linked list.
@@ -11,6 +11,8 @@
  *     ListNode(int x, ListNode *next) : val(x), next(next) {}
  * };
  */
+
+//Method-1 (using vactor)
 class Solution {
 public:
     bool isPalindrome(ListNode* head) {
@@ -39,4 +41,32 @@ public:
         return true;
         
     }
+};
+
+
+//Method-2 (using stack)
+class Solution {
+public:
+    bool isPalindrome(ListNode* head) {
+        ListNode *p=head;
+        
+        stack<int>s;
+        
+        while(p){
+            s.push(p->val);
+            p=p->next;
+        }
+        
+        p=head;
+        while(p){
+            if(p->val==s.top()){
+                p=p->next;
+                s.pop();
+            }
+            else
+                return false;
+        }
+        return true;
+    }
+    
 };
