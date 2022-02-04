@@ -12,6 +12,8 @@
  * };
  */
  
+
+ //Method-1 (using loop)
 class Solution {
 public:
     ListNode* middleNode(ListNode* head) {
@@ -32,5 +34,21 @@ public:
             ptr2=ptr2->next;
         
         return ptr2;
+    }
+};
+
+
+//Method-2 (Two-pointers approach)
+class Solution {
+public:
+    ListNode* middleNode(ListNode* head) {
+        ListNode* ptr1=head, *ptr2=head;
+        
+        while(ptr2!=NULL && ptr2->next!=NULL){
+            ptr1=ptr1->next;
+            ptr2=ptr2->next->next;
+        }
+        
+        return ptr1;
     }
 };
