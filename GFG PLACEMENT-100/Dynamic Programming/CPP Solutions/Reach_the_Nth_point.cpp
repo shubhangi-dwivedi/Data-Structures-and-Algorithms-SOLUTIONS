@@ -1,3 +1,6 @@
+//Reach the Nth point 
+//https://practice.geeksforgeeks.org/problems/reach-the-nth-point5433/1/#
+
 // { Driver Code Starts
 #include<bits/stdc++.h>
 using namespace std;
