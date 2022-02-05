@@ -35,6 +35,34 @@ public:
     }
 };
 
+//Method-2 (memoization)
+class Solution{
+public:
+    int dp[101][101];
+    
+    int matrixMultiplication(int n, int a[])
+    {
+        // code here
+        memset(dp,-1,sizeof(dp));
+         int res= solve(a,0,n-1);
+    
+    }
+    
+    int solve(int a[],int i, int j){
+        if(i+1==j)
+            return 0;
+        if(dp[i][j]!=-1)
+            return dp[i][j];
+            
+        dp[i][j]=INT_MAX;
+
+        for(int k=i+1;k<j;k++)
+            dp[i][j]=min(dp[i][j], solve(a,i,k)+solve(a,k,j)+a[i]*a[k]*a[j]);
+        
+        return dp[i][j];
+    }
+};
+
 // { Driver Code Starts.
 
 int main(){

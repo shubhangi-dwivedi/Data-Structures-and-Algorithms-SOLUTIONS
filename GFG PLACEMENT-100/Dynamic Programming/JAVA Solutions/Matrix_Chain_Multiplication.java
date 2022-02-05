@@ -52,3 +52,33 @@ class Solution{
             return dp[0][n-1];
     }
 }
+
+
+//Method-2 (memoization)
+class Solution{
+    static int dp[][]=new int[101][101];
+    
+    static int matrixMultiplication(int n, int a[])
+    {
+        // code here
+        for (int[] row: dp) 
+            Arrays.fill(row, -1);
+        
+        int res=solve(a,0,n-1);
+        
+        return res;
+    }
+    
+    static int solve(int a[],int i,int j){
+        if(i+1==j)
+            return 0;
+        if(dp[i][j]!=-1)
+            return dp[i][j];
+        
+        dp[i][j]=Integer.MAX_VALUE;
+        for(int k=i+1;k<j;k++)
+            dp[i][j]=Math.min(dp[i][j], solve(a,i,k)+solve(a,k,j)+a[i]*a[j]*a[k]);
+            
+        return dp[i][j];
+    }
+}
