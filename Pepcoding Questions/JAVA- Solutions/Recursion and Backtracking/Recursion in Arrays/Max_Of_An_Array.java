@@ -15,8 +15,6 @@ public class Max_Of_An_Array {
     }
 
     public static void main(String[] args) {
-        //Max_Of_An_Array m;
-
         Scanner sc=new Scanner(System.in);
         int n=sc.nextInt();
 
@@ -25,7 +23,6 @@ public class Max_Of_An_Array {
         for(int i=0;i<n;i++)
             a[i]=sc.nextInt();
 
-        //int res=Integer.MIN_VALUE;
         System.out.println(find_max(a,n,0));
     }
 
