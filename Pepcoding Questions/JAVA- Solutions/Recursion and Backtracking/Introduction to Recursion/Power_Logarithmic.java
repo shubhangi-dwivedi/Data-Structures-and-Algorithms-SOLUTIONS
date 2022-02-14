@@ -1,3 +1,5 @@
+//Time Complexity - O(log(p))
+
 import java.util.Scanner;
 
 public class Power_Logarithmic {
