@@ -1,3 +1,5 @@
+//Time Complexity - O(p)
+
 import java.util.Scanner;
 
 public class Power_Linear {
