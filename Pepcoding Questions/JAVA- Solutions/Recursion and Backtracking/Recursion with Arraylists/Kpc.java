@@ -57,7 +57,7 @@ public class Kpc {
         ArrayList<String> rres=getKpc(ros);
         ArrayList<String> mres=new ArrayList<>();
 
-        String codeforeach=codes[ch-'0'];
+        String codeforeach=codes[ch-'0']; //or, codes[ch-48]
         for(int i=0;i<codeforeach.length();i++){
             char chcode=codeforeach.charAt(i);
 
