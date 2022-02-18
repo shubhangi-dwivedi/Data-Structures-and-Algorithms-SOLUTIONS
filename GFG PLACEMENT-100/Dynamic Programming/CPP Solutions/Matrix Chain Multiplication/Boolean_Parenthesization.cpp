@@ -2,7 +2,7 @@
 //https://practice.geeksforgeeks.org/problems/boolean-parenthesization5610/1/#
 
 
-//Method-1 (Recursion)
+//Method-1 (Memoization)
 #include <bits/stdc++.h>
 using namespace std;
 
