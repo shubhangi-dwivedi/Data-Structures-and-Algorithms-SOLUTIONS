@@ -6,6 +6,7 @@
 class Solution {
 public:
     int minCostClimbingStairs(vector<int>& cost) {
+        int n=cost.size();
         int dp[n+1];
         memset(dp,0,n+1);
         
