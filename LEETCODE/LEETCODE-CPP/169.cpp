@@ -1,5 +1,7 @@
 //169. Majority Element
+//https://leetcode.com/problems/majority-element/
 
+//Method-1 (time- O(N), space- O(N)) 
 class Solution {
 public:
     int majorityElement(vector<int>& nums) 
@@ -22,5 +24,24 @@ public:
         }
         
         return -1;
+    }
+};
+
+
+//Method-2 (time- O(N), space-O(1))
+class Solution {
+public:
+    int majorityElement(vector<int>& nums) {
+        int count=0,maj_ele;
+        
+        for(int i=0;i<nums.size();i++)
+            if(count)
+                count+=(nums[i]==maj_ele? 1:-1);
+            else{
+                maj_ele=nums[i];
+                count=1;
+            }
+        
+        return maj_ele;
     }
 };
