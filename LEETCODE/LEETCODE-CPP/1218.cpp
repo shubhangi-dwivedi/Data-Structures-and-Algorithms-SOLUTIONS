@@ -15,9 +15,8 @@ public:
         int res=0;
         
         for(auto i:arr){
-            if(m.count(i-diff)){
+            if(m.count(i-diff))
                 m[i]=m[i-diff]+1;
-            }
             else
                 m[i]=1;
             
