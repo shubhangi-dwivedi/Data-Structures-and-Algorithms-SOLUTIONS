@@ -13,11 +13,11 @@ class Solution {
         // Code here
         int m=grid.size(), n=grid[0].size();
         int count=0;
-        int dir[8][2]={{0,1},{1,0},{-1,0},{0,-1},{1,1},{-1,-1},{1,-1},{-1,1}};
+        int dir[8][2]={{0,1},{1,0},{-1,0},{0,-1},{1,1},{-1,-1},{1,-1},{-1,1}};  //for moving in direction i.e. up-down, left-right, diagonally
         
         queue<pair<int,int>>q;
         
-        //BFS
+        //BFS - (variation - disconnected graph)
         for(int i=0;i<m;i++){
             for(int j=0;j<n;j++){
                 if(grid[i][j]=='1'){
