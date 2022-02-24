@@ -7,7 +7,7 @@ public:
     int numIslands(vector<vector<char>>& grid) {
         int m=grid.size(), n=grid[0].size();
         int count=0;
-        int dir[6][2]={{0,1},{1,0},{-1,0},{0,-1}};
+        int dir[6][2]={{0,1},{1,0},{-1,0},{0,-1}}; //for moving in direction i.e. up-down, left-right
         queue<pair<int,int>>q;
         
         for(int i=0;i<m;i++){
