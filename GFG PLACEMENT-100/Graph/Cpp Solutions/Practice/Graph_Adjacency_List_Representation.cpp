@@ -30,6 +30,7 @@ void addEdge(vector<int> adj[], int u, int v){
 
 void printEdge(vector<int> adj[], int v){
     for(int i=0;i<v;i++){
+        cout<<i<<" ";
         for(auto x:adj[i])
             cout<<x<<" ";
         cout<<endl;
