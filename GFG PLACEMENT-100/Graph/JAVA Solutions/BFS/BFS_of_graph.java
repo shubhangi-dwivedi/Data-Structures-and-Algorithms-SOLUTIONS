@@ -1,6 +1,8 @@
 //BFS of graph 
 //https://practice.geeksforgeeks.org/problems/bfs-traversal-of-graph/1#
 
+//For connected graph
+
 // { Driver Code Starts
 // Initial Template for Java
 import java.util.*;
