@@ -19,7 +19,7 @@ class Solution {
             vis[i]=false;
             
         queue<int>q;
-        vis[0]=true;
+        vis[0]=true;    //assigning 0 as the source vertex
         q.push(0);
         
         while(!q.empty()){

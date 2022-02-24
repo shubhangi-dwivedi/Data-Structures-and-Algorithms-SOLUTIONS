@@ -43,7 +43,7 @@ class Solution {
         
         boolean vis[]=new boolean[v];
             
-        vis[0]=false;
+        vis[0]=true;    //assigning 0 as the source vertex
         Queue<Integer> q= new LinkedList<>();
         q.add(0);
         
