@@ -1,6 +1,6 @@
 //Graph Adjacency List Representation
 
-//Here we have used Array of vectors
+//Here we have used Array of vectors.... we can also use vector of vectors (which will be helpful in case of adding more vertices at runtime)
 //Code for undirected graph
 /*
     graph: 
