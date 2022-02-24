@@ -1,5 +1,48 @@
 //200. Number of Islands
+//https://leetcode.com/problems/number-of-islands/
 
+//Method-1 (BFS (variation - disconnected graph))
+class Solution {
+public:
+    int numIslands(vector<vector<char>>& grid) {
+        int m=grid.size(), n=grid[0].size();
+        int count=0;
+        int dir[6][2]={{0,1},{1,0},{-1,0},{0,-1}};
+        queue<pair<int,int>>q;
+        
+        for(int i=0;i<m;i++){
+            for(int j=0;j<n;j++){
+                if(grid[i][j]=='1'){
+                    count++;
+                    q.push({i,j});
+                    grid[i][j]='2';
+                    
+                    //BFS
+                    pair<int,int>p;
+                
+                    while(!q.empty()){
+                        p=q.front();
+                        q.pop();
+                        
+                        for(int k=0;k<4;k++){
+                            int r=p.first+dir[k][0];
+                            int c=p.second+dir[k][1];
+                        
+                            if(r>=0 && r<m && c>=0 && c<n && grid[r][c]=='1'){
+                                grid[r][c]='2';
+                                q.push({r,c});
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        return count;
+    }
+};
+
+
+//Methos-2 (DFS)
 class Solution {
 public:
     int numIslands(vector<vector<char>>& grid) {
