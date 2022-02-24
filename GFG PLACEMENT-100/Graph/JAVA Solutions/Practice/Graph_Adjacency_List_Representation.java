@@ -29,7 +29,8 @@ class Graph_Adjacency_List_Representation{
 
     static void printEdge(ArrayList<ArrayList<Integer>> adj){
         for(int i=0;i<adj.size();i++){
-            for(int j=0;i<adj.get(i).size();i++)
+            System.out.print(i+" ");
+            for(int j=0;j<adj.get(i).size();j++)
                 System.out.print(adj.get(i).get(j)+" ");
             System.out.println();
         }
