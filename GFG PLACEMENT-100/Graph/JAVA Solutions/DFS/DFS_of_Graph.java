@@ -40,7 +40,7 @@ class Solution {
     // Function to return a list containing the DFS traversal of the graph.
     public ArrayList<Integer> dfsOfGraph(int v, ArrayList<ArrayList<Integer>> adj) {
         // Code here
-        boolean[] vis= new boolean[v];
+        boolean[] vis= new boolean[v]; //By defauLt initialized as FALSE
         ArrayList<Integer> res= new ArrayList<Integer>();
         
         dfs(adj, 0, res, vis); //passing 0 as source vertex
