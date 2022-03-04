@@ -53,6 +53,7 @@ class Solution
         //O(N^2)
         for(int i=0;i<n;i++){
             int m = min(n, arr[i].dead);
+            //for finding the slot availabe and assigning the job
             while(m){
                 if(time_slot[m-1]==-1){
                     time_slot[m-1]=arr[i].id;
