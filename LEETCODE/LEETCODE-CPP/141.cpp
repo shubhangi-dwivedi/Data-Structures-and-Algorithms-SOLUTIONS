@@ -1,5 +1,7 @@
 //141. Linked List Cycle
+//https://leetcode.com/problems/linked-list-cycle/
 
+//Method-1 (using hashmap)
 /**
  * Definition for singly-linked list.
  * struct ListNode {
