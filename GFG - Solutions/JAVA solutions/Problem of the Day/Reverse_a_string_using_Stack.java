@@ -1,0 +1,41 @@
+//Date: 08/03/2022
+
+//Reverse a string using Stack 
+//https://practice.geeksforgeeks.org/problems/reverse-a-string-using-stack/1#
+
+// { Driver Code Starts
+/*package whatever //do not write package name here */
+
+import java.io.*;
+import java.util.*;
+
+class GFG {
+	public static void main (String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int t = sc.nextInt();
+        while(t-- > 0){
+            Solution obj = new Solution();
+            System.out.println(obj.reverse(sc.next()));
+        }
+	}
+}
+// } Driver Code Ends
+
+
+class Solution {
+    
+    public String reverse(String S){
+        //code here
+        Stack<Character> stk= new Stack<>();
+       
+        for(char c: S.toCharArray())
+            stk.push(c);
+            
+        StringBuilder sb= new StringBuilder();
+        while(!stk.isEmpty())
+            sb.append(stk.pop());
+            
+        return sb.toString();
+    }
+
+}
