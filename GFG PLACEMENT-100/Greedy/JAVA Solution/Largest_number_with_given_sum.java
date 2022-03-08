@@ -3,7 +3,7 @@
 
 
 //Method-1 (Greedy solution)
-//using StringBuffer class
+//using StringBuilder class
 import java.io.*;
 import java.lang.*;
 import java.util.*;
@@ -41,10 +41,10 @@ class Solution
     {
         // add your code here
         if(sum> 9*n)
-            return "-1";
-            
-            
-        StringBuffer sb= new StringBuffer();
+        return "-1";
+        
+        
+        StringBuilder sb= new StringBuilder();
         for(int i=0;i<n;i++){
             if(sum>9){
                 sb.append("9");
@@ -55,8 +55,8 @@ class Solution
                 sum=0;
             }
         }
-        
-        return sb.toString();
+    
+            return sb.toString();
     }
 }
 
