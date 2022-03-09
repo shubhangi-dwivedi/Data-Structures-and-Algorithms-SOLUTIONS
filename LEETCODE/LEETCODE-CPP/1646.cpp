@@ -1,7 +1,7 @@
 //1646. Get Maximum in Generated Array
 //https://leetcode.com/problems/get-maximum-in-generated-array/
 
-//Method-1 (dp-tabulation)
+//Method-1 (dp-tabulation) (Time complexity : O(n), Space Complexity: O(n))
 class Solution {
 public:
     int getMaximumGenerated(int n) {
