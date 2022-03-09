@@ -20,7 +20,7 @@ public:
             
             i++;
         }
-        res[i]=low;
+        res[i]=low; //or, res[i]=high;
         
         return res;
     }
