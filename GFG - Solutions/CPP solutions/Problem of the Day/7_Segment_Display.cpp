@@ -1,4 +1,4 @@
-//Date: 09/03/2022
+//Date: 10/03/2022
 
 //7 Segment Display 
 //https://practice.geeksforgeeks.org/problems/7-segment-display0752/1#
@@ -49,7 +49,7 @@ class Solution {
             else if(arr[i]==4)
                 res+='4';
             else
-                res+='2';
+                res+='2';   //arr[i]==5
         }
         
         return res;
