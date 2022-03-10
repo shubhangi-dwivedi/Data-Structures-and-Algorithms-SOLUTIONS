@@ -16,6 +16,7 @@ class Solution {
         int count[10]={6, 2, 5, 5, 4, 5, 6, 3, 7, 5};
         int arr[n];
         
+        //counting segments for given number string
         int sum=0;
         for(int i=0;i<n;i++)
             sum+=count[s[i]-'0'];
@@ -32,14 +33,16 @@ class Solution {
         //took 4 as limiting 
         while(i<n && sum>=4){
             arr[i]=6;   //inserting 0 to every pos
-            sum+=2;
-            sum-=6;
+            sum+=2;     //adding segments of 1 as 1 is replaced by 0
+            sum-=6;     //removing segments of 0
             i++;
         }
         
-        arr[n-1]+=sum;
+        arr[n-1]+=sum;  //Adding remaining segments at the last index
         
         for(int i=0;i<n;i++){
+
+            //smallest digit for given no. of segments
             if(arr[i]==6)
                 res+='0';
             else if(arr[i]==2)
@@ -49,7 +52,7 @@ class Solution {
             else if(arr[i]==4)
                 res+='4';
             else
-                res+='2';   //arr[i]==5
+                res+='2';   //arr[i]==5 i.e. 5 segments
         }
         
         return res;
