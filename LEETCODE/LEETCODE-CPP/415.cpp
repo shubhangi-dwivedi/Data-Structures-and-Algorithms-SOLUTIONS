@@ -13,7 +13,7 @@ public:
             
             //s1 & s2 have elements
             if(l1>=0 && l2>=0){
-                int x=s1[l1]-'0', y=s2[l2]-'0';
+                int x=s1[l1]-'0', y=s2[l2]-'0'; ////or, int x=s1[l1]-48, y=s2[l2]-48;
                 
                 sum=carry+x+y;
                 l1--,l2--;
@@ -21,7 +21,7 @@ public:
             
             //l1 has elements, l2 is exhausted
             else if(l1>=0){
-                int x=s1[l1]-'0';
+                int x=s1[l1]-'0';   //or,  int x=s1[l1]-48;
                 
                 sum=carry+x;
                 l1--;
@@ -29,7 +29,7 @@ public:
             
             //l2 has elements, l1 is exhausted
             else if(l2>=0){
-                int x=s2[l2]-'0';
+                int x=s2[l2]-'0';   //or,  int x=s2[l2]-48;
                     
                 sum=carry+x;
                 l2--;
