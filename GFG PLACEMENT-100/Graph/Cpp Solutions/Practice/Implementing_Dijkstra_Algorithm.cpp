@@ -79,5 +79,35 @@ int main()
 
     return 0;
 }
-
   // } Driver Code Ends
+
+
+//Method-2 (using priority queue)
+vector <int> dijkstra(int v, vector<vector<int>> adj[], int src)
+    {
+        // Code here
+        vector<int> dist_to(v, INT_MAX);
+        priority_queue<pair<int,int>>pq;    //distnace & vertex pair
+        
+        pq.push({0,src});
+        dist_to[src]=0;
+        
+        while(pq.size()){
+            auto top=pq.top();
+            pq.pop();
+            
+            int dist=top.first;
+            int u=top.second;
+            
+            for(auto &y : adj[u]){
+                int curr_dist= dist+y[1];
+                
+                if(curr_dist < dist_to[y[0]]){
+                    dist_to[y[0]]=curr_dist;
+                    pq.push({curr_dist,y[0]}); //pushing distance & vertex
+                }
+            }
+        }
+        
+        return dist_to;
+    }
