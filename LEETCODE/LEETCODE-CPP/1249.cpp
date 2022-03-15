@@ -19,8 +19,6 @@ public:
             }   
         }
         
-        cout<<s;
-        
         while(!stk.empty()){
             s[stk.top()]='_';
             stk.pop();
