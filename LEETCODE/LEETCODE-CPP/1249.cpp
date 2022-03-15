@@ -15,10 +15,11 @@ public:
                 if(!stk.empty())
                     stk.pop();
                 else
-                    s[i]='_';
+                    s[i]='_';   // ) without ( 
             }   
         }
         
+        //extra (
         while(!stk.empty()){
             s[stk.top()]='_';
             stk.pop();
