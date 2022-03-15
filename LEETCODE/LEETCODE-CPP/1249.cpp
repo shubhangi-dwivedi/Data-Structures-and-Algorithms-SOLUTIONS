@@ -26,6 +26,7 @@ public:
         }
         
         string res;
+        //required o/p
         for(char c : s)
             if(c!='_')
                 res+=c;
