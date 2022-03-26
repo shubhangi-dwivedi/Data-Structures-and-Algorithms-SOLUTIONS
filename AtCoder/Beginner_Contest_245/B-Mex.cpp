@@ -6,12 +6,37 @@
 using namespace std;
 
 int main(){
-    int n;
+    long long n;
     cin>>n;
 
-    set<int> s;
+    vector<long long> a(n);
+    for(long long i=0;i<n;i++)
+        cin>>a[i];
+
+    for(long long i=0;i<=n;i++){
+        bool flag=true;
+        for(long long x:a)
+            if(x==i){
+                flag=false;
+            }
+
+            if(flag){
+                cout<<i;
+                break;
+            }
+
+    }
+}
+
+
+/*
+int main(){
+    long long n;
+    cin>>n;
+
+    set<long long> s;
     int y;
-    for(int i=0;i<n;i++){
+    for(long long i=0;i<n;i++){
         cin>>y;
         s.insert(y);
     }
@@ -23,12 +48,12 @@ int main(){
         i++;
     }
     
-    int x=0;
-    for(int i=0;i<s.size();i++){
+    long long x=0;
+    for(long long i=0;i<s.size();i++){
         if(a[x++]!=i){
             cout<<i;
             break;
         }
     }
     
-}
+} */
