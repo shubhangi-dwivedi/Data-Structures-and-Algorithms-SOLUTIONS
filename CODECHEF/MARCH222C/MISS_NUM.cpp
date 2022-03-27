@@ -5,7 +5,6 @@
 
 using namespace std;
 
-/*
 int main(){
     int t;
 
@@ -20,6 +19,7 @@ int main(){
         if(a[0]>=0)
             cout<<-1<<" "<<-1<<endl;
 
+        a[0]=abs(a[0]);
 
         int x=(a[2]+a[0])/2;
         int y=a[2]-x;
@@ -31,4 +31,3 @@ int main(){
             cout<<-1<<" "<<-1<<endl;
     }
 }
-*/
