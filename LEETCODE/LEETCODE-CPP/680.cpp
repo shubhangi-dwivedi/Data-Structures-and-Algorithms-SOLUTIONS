@@ -24,9 +24,6 @@ public:
                 i++,j--;
         }
         
-        if(count>1)
-            return false;
-        
         return true;
     }
 };
