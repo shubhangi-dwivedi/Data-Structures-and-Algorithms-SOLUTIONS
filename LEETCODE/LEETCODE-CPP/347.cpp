@@ -1,41 +1,28 @@
 //347. Top K Frequent Elements
+//https://leetcode.com/problems/top-k-frequent-elements/
 
 //using maxheap
 class Solution {
 public:
     vector<int> topKFrequent(vector<int>& nums, int k) {
+        unordered_map<int,int>m;
         
-        int n=nums.size();
-        unordered_map<int,int> m;
-        priority_queue<pair<int,int>> q; 
-        vector<pair<int,int>>v;
-        
-        for(int i=0;i<n;i++)
+        for(int i=0;i<nums.size();i++)
             m[nums[i]]++;
         
-        for(auto i:m)
-            v.push_back({i.second,i.first});
+        priority_queue<pair<int,int>> q;
         
-        int x=0;
-        for(int i=0;i<v.size();i++){
-            if(x<k)
-                q.push({v[i].first,v[i].second});
-            
-            else{
-                if(v[i].first>q.top().first){
-                    q.push({v[i].first,v[i].second});
-                    q.pop();
-                }
-            }
+        for(auto i : m){
+            q.push({i.second,i.first});
         }
         
-        vector<int>res;
-        int i=0;
-        while(i<k){
+        vector<int> res;
+        for(int i=0;i<k;i++){
             res.push_back(q.top().second);
             q.pop();
-            i++;
         }
+        
         return res;
+        
     }
 };
