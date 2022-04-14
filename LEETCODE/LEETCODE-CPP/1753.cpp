@@ -33,17 +33,17 @@ public:
 
 //Method-2 (mathematics)
 class Solution {
-    public:
-        int maximumScore(int a, int b, int c) {
-            int half=(a+b+c)/2;
+public:
+    int maximumScore(int a, int b, int c) {
+        int half=(a+b+c)/2;
             
-            if(a>half)
-                return b+c;
-            else if(b>half)
-                return a+c;
-            else if(c>half)
-                return a+b;
-            else
-                return half;
-        }
-    };
+        if(a>half)
+            return b+c;
+        else if(b>half)
+            return a+c;
+        else if(c>half)
+            return a+b;
+        else
+            return half;
+    }
+};
