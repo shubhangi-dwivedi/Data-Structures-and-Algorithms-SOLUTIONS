@@ -1,7 +1,7 @@
 //844. Backspace String Compare
 //https://leetcode.com/problems/backspace-string-compare/
 
-//using stack
+//using stacks
 class Solution {
 public:
     bool backspaceCompare(string s, string t) {
