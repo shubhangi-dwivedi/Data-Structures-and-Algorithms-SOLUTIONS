@@ -1,6 +1,5 @@
 //387. First Unique Character in a String
 
-
 //method 1
 class Solution {
 public:
