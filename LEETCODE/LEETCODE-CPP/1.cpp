@@ -1,5 +1,5 @@
 //1. Two Sum
-
+//https://leetcode.com/problems/two-sum/
 
 //method 1
 class Solution {
