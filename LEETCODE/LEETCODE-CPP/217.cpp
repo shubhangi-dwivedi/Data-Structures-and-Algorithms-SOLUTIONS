@@ -1,4 +1,5 @@
 //217. Contains Duplicate
+//https://leetcode.com/problems/contains-duplicate/
 
 class Solution {
 public:
@@ -11,7 +12,7 @@ public:
             m[nums[i]]++;
         
         for(auto i:m)
-            if(i.second>=2)
+            if(i.second>1)
                 return true;
         
         return false;
