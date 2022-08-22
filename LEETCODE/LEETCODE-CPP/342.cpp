@@ -1,5 +1,7 @@
 //342. Power of Four
+//https://leetcode.com/problems/power-of-four/
 
+//Method - 1
 class Solution {
 public:
     bool isPowerOfFour(int n) {
@@ -22,5 +24,22 @@ public:
             return true;
         
         return false;
+    }
+};
+
+
+//Method -2 
+class Solution {
+public:
+    bool isPowerOfFour(int n) {
+        if(n==0)
+            return false;
+        
+        float x=log(n)/log(4);
+        
+        if(ceil(x)==floor(x))
+            return true;
+        else
+            return false;
     }
 };
