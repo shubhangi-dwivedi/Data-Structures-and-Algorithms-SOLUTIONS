@@ -12,6 +12,7 @@
  * };
  */
 
+
 //Method-1 (using vactor)
 class Solution {
 public:
@@ -58,14 +59,14 @@ public:
         }
         
         p=head;
-        while(p){
+        while(p)
             if(p->val==s.top()){
                 p=p->next;
                 s.pop();
             }
             else
                 return false;
-        }
+        
         return true;
     }
     
