@@ -1,5 +1,7 @@
 //326. Power of Three
+//https://leetcode.com/problems/power-of-three/
 
+//Method - 1
 class Solution {
 public:
     bool isPowerOfThree(int n) {
@@ -23,5 +25,19 @@ public:
         
         return false;
         
+    }
+};
+
+//Method - 2
+class Solution {
+public:
+    bool isPowerOfThree(int n) {
+        if(n==0)
+            return false;
+        
+        if(ceil(log10(n)/log10(3))==floor(log10(n)/log10(3)))
+            return true;
+        else
+            return false;
     }
 };
