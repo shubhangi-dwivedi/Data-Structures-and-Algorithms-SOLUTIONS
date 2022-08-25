@@ -11,13 +11,11 @@ public:
             m1[magazine[i]]++;
         
         for(auto i: ransomNote)
-        {
             if(!m1[i])
                 return false;
             
             else
                 m1[i]--;
-        }
         
         return true;
         
