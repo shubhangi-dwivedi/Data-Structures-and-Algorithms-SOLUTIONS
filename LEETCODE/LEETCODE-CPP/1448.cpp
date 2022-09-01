@@ -22,16 +22,16 @@ public:
         return count;
     }
     
-    void count_nodes(TreeNode* node, int node_val){
+    void count_nodes(TreeNode* node, int prev_val){
         if(node==NULL)
             return;
         
-        if(node->val >= node_val){
+        if(node->val >= prev_val){
             count++;
-            node_val=node->val;
+            prev_val=node->val;
         }
         
-        count_nodes(node->left,node_val);
-        count_nodes(node->right,node_val);
+        count_nodes(node->left,prev_val);
+        count_nodes(node->right,prev_val);
     }
 };
