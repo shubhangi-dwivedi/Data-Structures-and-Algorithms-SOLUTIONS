@@ -2,10 +2,8 @@
 //https://leetcode.com/problems/search-insert-position/
 
 class Solution {
-public:
-    int searchInsert(vector<int>& nums, int target) {
-     
-        int l=0,h=nums.size()-1,mid;
+    public int searchInsert(int[] nums, int target) {
+        int l=0,h=nums.length-1,mid;
         
         while(l<=h)
         {
@@ -22,4 +20,4 @@ public:
         
         return l;
     }
-};
+}
