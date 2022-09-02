@@ -16,7 +16,7 @@ class Solution {
             else
                 s=mid+1;
         }
-        
+    
         return -1;
     }
 }
