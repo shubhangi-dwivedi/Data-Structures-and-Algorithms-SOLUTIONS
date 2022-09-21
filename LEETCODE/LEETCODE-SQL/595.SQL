@@ -1,5 +1,5 @@
-//595. Big Countries
-//https://leetcode.com/problems/big-countries/
+/* 595. Big Countries */
+/* https://leetcode.com/problems/big-countries/ */
 
 /* Write your PL/SQL query statement below */
 select name,population,area 
