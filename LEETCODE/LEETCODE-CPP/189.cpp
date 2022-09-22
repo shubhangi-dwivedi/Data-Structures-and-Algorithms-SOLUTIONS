@@ -1,5 +1,5 @@
 //189. Rotate Array
-
+//https://leetcode.com/problems/rotate-array/
 
 class Solution {
 public:
@@ -17,8 +17,7 @@ public:
         while(i<j)
         {
             swap(nums[i],nums[j]);
-            i++;
-            j--;
+            i++,j--;
         }
         
         reverse(nums.begin()+k,nums.end());
