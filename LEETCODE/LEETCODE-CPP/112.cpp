@@ -34,3 +34,4 @@ public:
         return (calc(root->left, ts) || calc(root->right, ts));
     }
 };
+hh
