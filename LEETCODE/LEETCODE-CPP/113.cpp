@@ -24,13 +24,13 @@ public:
     }
     
     void calc(TreeNode* root, int ts, vector<int> temp){
-        if(root==NULL)
+        if(!root)
             return;
         
         temp.push_back(root->val);
         ts-=root->val;
         
-        if(root->left==NULL && root->right==NULL){
+        if(!root->left && !root->righ){
             if(ts==0)
                 res.push_back(temp);
         }
