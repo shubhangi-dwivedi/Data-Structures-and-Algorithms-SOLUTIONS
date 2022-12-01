@@ -1,28 +1,26 @@
-//Determine if String Halves Are Alike
+//1704. Determine if String Halves Are Alike
+//https://leetcode.com/problems/determine-if-string-halves-are-alike/description/
 
 class Solution {
 public:
     bool halvesAreAlike(string s) {
-        
-        int count=0;
-        
-        for(int i=0;i<s.length()/2;i++)
-        {
-            s[i]=tolower(s[i]);
-            if(s[i]=='a' || s[i]=='e' || s[i]=='i' || s[i]=='o' || s[i]=='u' )
-                count++;
-        }
-        
-        for(int i=s.length()/2;i<s.length();i++)
-        {
-            s[i]=tolower(s[i]);
-            if(s[i]=='a' || s[i]=='e' || s[i]=='i' || s[i]=='o' || s[i]=='u' )
-                count--;
+        transform(s.begin(), s.end(), s.begin(), ::tolower);
+        int l=0, u=s.length()-1;
+
+        int vow1=0,vow2=0;
+
+        while(l<u){
+            if(s[l]=='a'||s[l]=='e'||s[l]=='i'||s[l]=='o'||s[l]=='u')
+                vow1++;
+            if(s[u]=='a'||s[u]=='e'||s[u]=='i'||s[u]=='o'||s[u]=='u')
+                vow2++;
+
+            l++,u--;
         }
 
-        if(count==0)
+        if(vow1==vow2)
             return true;
-        else
-            return false;
+
+        return false;
     }
 };
