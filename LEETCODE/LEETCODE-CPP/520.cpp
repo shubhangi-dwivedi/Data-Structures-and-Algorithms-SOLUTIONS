@@ -3,18 +3,18 @@
 
 class Solution {
 public:
-    bool detectCapitalUse(string w) {
-        int l=w.length();
-        int c=0;
-        for(int i=0;i<l;i++)
-            if(isupper(w[i]))
-                c++;
-        
-        if(c==0 || c==l)
+    bool detectCapitalUse(string word) {
+        int cap_count=0;
+        for(int i=0;i<word.length();i++)
+            if(isupper(word[i]))
+                cap_count++;
+
+        if(cap_count==0 || cap_count==word.length())
             return true;
-        if(isupper(w[0]))
-            if(c==1)
-                return true;
-            return false;
+        if(cap_count==1 && isupper(word[0]))
+            return true;
+
+        return false;
+
     }
 };
