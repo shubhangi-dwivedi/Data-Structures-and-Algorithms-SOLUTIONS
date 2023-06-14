@@ -1,5 +1,7 @@
 //53. Maximum Subarray
+//https://leetcode.com/problems/maximum-subarray/description/
 
+//Kadane's Algorithm
 class Solution {
 public:
     int maxSubArray(vector<int>& nums) 
