@@ -4,7 +4,6 @@
 class Solution {
 public:
     int largestAltitude(vector<int>& gain) {
-        
         int sum=0,max_alt=0,n=gain.size();
         
         for(int i=0;i<n;i++){
