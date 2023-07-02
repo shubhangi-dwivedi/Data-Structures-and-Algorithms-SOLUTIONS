@@ -2,7 +2,8 @@
 //https://leetcode.com/problems/find-smallest-letter-greater-than-target/description/
 
 
-//Method -1 (using linear search)
+//Method -1 (using linear search) 
+//time complexity - O(N), space complexity - O(1)
 class Solution {
 public:
     char nextGreatestLetter(vector<char>& letters, char target) {
@@ -17,6 +18,7 @@ public:
 
 
 //Method -2 (using ASCII code & linear search)
+//time complexity - O(N), space complexity - O(1)
 class Solution {
 public:
     char nextGreatestLetter(vector<char>& letters, char target) {
@@ -32,6 +34,7 @@ public:
 
 
 //Method -3 (using binary search)
+//time complexity - O(logN), space complexity - O(1)
 class Solution {
 public:
     char nextGreatestLetter(vector<char>& letters, char target) {
