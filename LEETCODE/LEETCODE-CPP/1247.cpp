@@ -9,8 +9,6 @@ public:
 
         int x=0, y=0;
 
-
-       
         for(int i=0;i<s1.size();i++){
 
             //if the both characters at an index are same, skip them
