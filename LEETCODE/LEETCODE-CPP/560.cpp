@@ -37,7 +37,7 @@ public:
             //calculation prefix sum
             prefSum+=i; 
 
-            //calculating suarrays
+            //calculating subarrays
             //res=res + freq[prefSum-k]
             if(freq.find(prefSum-k)!=freq.end())
                 res+=freq[prefSum-k];
