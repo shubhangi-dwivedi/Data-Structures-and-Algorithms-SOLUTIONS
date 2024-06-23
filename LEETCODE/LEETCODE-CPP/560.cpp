@@ -22,3 +22,30 @@ public:
         return count;
     }
 };
+
+
+//Method-2 Prefix Sum (Time- O(n)) 
+class Solution {
+public:
+    int subarraySum(vector<int>& nums, int k) {
+        int prefSum=0, res=0;
+        unordered_map<int,int>freq;
+
+        freq[0]=1;
+
+        for(auto i:nums){
+            //calculation prefix sum
+            prefSum+=i; 
+
+            //calculating suarrays
+            //res=res + freq[prefSum-k]
+            if(freq.find(prefSum-k)!=freq.end())
+                res+=freq[prefSum-k];
+
+            freq[prefSum]++;
+        }
+
+        //counts of subarrays
+        return res;
+    }
+};
