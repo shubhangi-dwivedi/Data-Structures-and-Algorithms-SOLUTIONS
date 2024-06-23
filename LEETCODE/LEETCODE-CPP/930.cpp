@@ -72,6 +72,9 @@ public:
     }
         
     int numSubarraysWithSum(vector<int>& nums, int goal) {
+
+        //atMost(nums, goal) --> less than goal
+        //atMost(nums, goal-1) -->less than goal -1
         return atMost(nums, goal)- atMost(nums,goal-1);
     }
 };
