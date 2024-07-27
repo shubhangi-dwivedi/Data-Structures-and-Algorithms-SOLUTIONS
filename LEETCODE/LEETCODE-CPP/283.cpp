@@ -1,4 +1,5 @@
 //283. Move Zeroes
+//https://leetcode.com/problems/move-zeroes/description/
 
 class Solution {
 public:
@@ -7,10 +8,8 @@ public:
         int lz=0;
         
         for(int i=0;i<nums.size();i++)
-        {
             if(nums[i]!=0)
                 nums[lz++]=nums[i];
-        }    
         
         for(int i=lz;i<nums.size();i++)
             nums[i]=0;
