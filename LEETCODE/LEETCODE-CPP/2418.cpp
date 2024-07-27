@@ -21,7 +21,7 @@ public:
 };
 
 
-//Methos-2 using priority queue
+//Methos-2 using priority queue (optimized)
 class Solution {
 public:
     vector<string> sortPeople(vector<string>& names, vector<int>& heights) {
