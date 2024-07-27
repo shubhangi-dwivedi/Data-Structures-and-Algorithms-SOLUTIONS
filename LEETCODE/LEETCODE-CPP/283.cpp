@@ -5,13 +5,13 @@ class Solution {
 public:
     void moveZeroes(vector<int>& nums) {
         
-        int lz=0;
+        int last_zero=0, n=nums.size();
         
-        for(int i=0;i<nums.size();i++)
+        for(int i=0;i<n;i++)
             if(nums[i]!=0)
-                nums[lz++]=nums[i];
+                nums[last_zero++]=nums[i];
         
-        for(int i=lz;i<nums.size();i++)
+        for(int i=last_zero;i<n;i++)
             nums[i]=0;
     }
 };
