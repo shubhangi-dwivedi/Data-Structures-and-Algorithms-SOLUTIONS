@@ -1,5 +1,7 @@
 //231. Power of Two
+//https://leetcode.com/problems/power-of-two/description/
 
+//Method-1 brute force
 class Solution {
 public:
     bool isPowerOfTwo(int n) {
@@ -22,5 +24,16 @@ public:
             return true;
         
         return false;
+    }
+};
+
+//Method-2 Using Brian Kernighan Algo
+class Solution {
+public:
+    bool isPowerOfTwo(int n) {
+
+        if(n == 0 or n<0) return false;
+
+        return !(n&(n-1));
     }
 };
