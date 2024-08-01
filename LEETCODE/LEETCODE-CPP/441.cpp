@@ -22,7 +22,7 @@ public:
     }
 };
 
-//Methos-2 (binary search)
+//Method-2 (binary search)
 class Solution {
 public:
     int arrangeCoins(int n) {
