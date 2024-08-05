@@ -37,7 +37,7 @@ public:
                 if(end-start+1 == k){
                     nos++;
                     start=end+1;
-                    //end++;
+                    // end++; (optional but including it , it will exclude the repetition in new iteration)
                     continue;
                 }
                 end++;
