@@ -25,3 +25,30 @@ public:
         return res;
     }
 };
+
+//Method-2 (monotonic stack)
+class Solution {
+public:
+    int maxWidthRamp(vector<int>& nums) {
+        int n=nums.size(), res=0;
+        
+        stack<pair<int,int>> stk;
+
+        for(int i=0;i<n;i++){
+            if(stk.empty())
+                stk.push({nums[i],i});
+            else if(stk.top().first>nums[i])
+                stk.push({nums[i],i});
+        }
+
+        for(int i=n-1;i>=0;i--){
+            while(!stk.empty()&& nums[i]>=stk.top().first){
+                int idx=stk.top().second;
+                res=max(res, i-idx);
+                stk.pop();
+            }
+        }
+
+        return res;
+    }
+};
