@@ -80,3 +80,36 @@ public:
             }
     }
 };
+
+//Methos-2 (DFS) (clean code)
+class Solution {
+    int dx[4]={-1,1,0,0};
+    int dy[4]={0,0,-1,1};
+public:
+    int numIslands(vector<vector<char>>& grid) {
+        int n1=grid.size(), n2=grid[0].size(),count=0;
+        vector<vector<bool>> visited(n1,vector<bool>(n2, false));
+
+        for(int i=0;i<n1;i++){
+            for(int j=0;j<n2;j++){
+                if(grid[i][j]=='1' && !visited[i][j]){
+                    helper(grid, n1, n2, i, j, visited);
+                    count++;
+                }
+            }
+        }
+
+        return count;
+    }
+
+    void helper(vector<vector<char>>& grid, int n1, int n2, int i, int j, vector<vector<bool>>& visited){
+        if(i>=n1 || j>=n2 || i<0 || j<0 || grid[i][j]=='0' || visited[i][j])
+            return;
+
+        visited[i][j]=true;
+
+        for(int k=0;k<4;k++){
+            helper(grid,n1,n2,i+dx[k],j+dy[k],visited);
+        }
+    }
+};
