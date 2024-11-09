@@ -26,8 +26,8 @@ public:
             int c=q.front().first.second;
             int t=q.front().second;
 
-            t_count=max(t_count, t);
             q.pop();
+            t_count=max(t_count, t);
 
             for(int i=0;i<4;i++){
                 int i_row=r+dx[i], i_col=c+dy[i];
