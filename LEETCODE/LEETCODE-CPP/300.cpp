@@ -27,6 +27,42 @@ public:
         
 };
 
+//Method-2 DP
+class Solution {
+public:
+    int dp[2505][2505];
+    int lengthOfLIS(vector<int>& nums) {
+        
+        memset(dp,-1,sizeof(dp));
+        int n=nums.size();
+        
+        return helper(nums,-1,0);
+    }
+
+    int helper(vector<int>& nums, int prev, int curr){
+        //base case curr==n
+        if(curr==nums.size()){
+            return 0;
+        }
+
+        int ans1=0, ans2=0;
+
+        if(dp[curr][prev+1]!=-1)
+            return dp[curr][prev+1];
+
+        //take curr ele
+        if(prev==-1 || nums[curr]>nums[prev]){
+            ans1= helper(nums,curr,curr+1)+1;
+        }
+
+        //don't take curr ele
+        ans2= helper(nums,prev,curr+1);
+
+        //return max of ans1 and ans2
+        return dp[curr][prev+1]=max(ans1,ans2);
+    }
+};
+
 //Method-2 (Binary Search) (Time complexity - O(nlogn))
 class Solution {
 public:
