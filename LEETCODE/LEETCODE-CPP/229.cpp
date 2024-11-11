@@ -20,7 +20,7 @@ public:
     }
 };
 
-//Method-2 using moore's algo
+//Method-2 using moore's voting algo
 class Solution {
 public:
     vector<int> majorityElement(vector<int>& nums) {

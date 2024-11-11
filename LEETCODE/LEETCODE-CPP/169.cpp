@@ -60,3 +60,4 @@ public:
     }
 };
 
+//Method-4 Moore's voting algo
