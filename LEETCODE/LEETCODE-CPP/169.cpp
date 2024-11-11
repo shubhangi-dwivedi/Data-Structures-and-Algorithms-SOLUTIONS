@@ -39,7 +39,7 @@ public:
 };
 
 
-//Method-3 (time- O(N), space-O(1))
+//Method-3 Moore's voting algo (time- O(N), space-O(1))
 class Solution {
 public:
     int majorityElement(vector<int>& nums) {
@@ -59,6 +59,8 @@ public:
 
     }
 };
+
+//or, 
 
 //Method-4 Moore's voting algo
 class Solution {
