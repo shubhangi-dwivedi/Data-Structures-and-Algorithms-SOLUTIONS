@@ -1,6 +1,7 @@
 //46. Permutations
 //https://leetcode.com/problems/permutations/description/
 
+//Method-1 recursion
 class Solution {
 public:
     vector<vector<int>> permute(vector<int>& nums) {
