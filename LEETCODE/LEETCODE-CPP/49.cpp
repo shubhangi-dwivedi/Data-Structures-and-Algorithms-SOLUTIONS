@@ -9,6 +9,9 @@ public:
         int n=strs.size();
         unordered_map<string,vector<string>>mp;
         vector<vector<string>>ans;
+        if(n<0){
+            return ans;
+        }
 
         for(int i=0;i<n;i++){
             string temp=strs[i];
