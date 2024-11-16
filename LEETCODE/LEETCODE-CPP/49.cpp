@@ -29,7 +29,7 @@ public:
 };
 
 
-//Method-1 using hashmap and without sorting
+//Method-2 using hashmap and without sorting
 class Solution {
 public:
     vector<vector<string>> groupAnagrams(vector<string>& strs) {
