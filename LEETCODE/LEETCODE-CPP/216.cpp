@@ -1,6 +1,7 @@
 //216. Combination Sum III
 //https://leetcode.com/problems/combination-sum-iii/
 
+//Method-1 using recursion & backtracking
 class Solution {
 public:
     vector<vector<int>> combinationSum3(int k, int n) {
