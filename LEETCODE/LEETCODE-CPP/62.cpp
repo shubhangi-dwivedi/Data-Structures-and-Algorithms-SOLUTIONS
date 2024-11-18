@@ -25,6 +25,7 @@ public:
     }
 };
 
+
 //Method-2 (dp-tabulation)
 class Solution {
 public:
@@ -71,36 +72,6 @@ public:
                 r=calc(i+1,j,m,n);
             if(j<n)
                 d=calc(i,j+1,m,n);
-            
-            return dp[i][j]=r+d;
-        }
-    }
-};
-
-
-//Method-3 (dp-memoization) (TLE)
-class Solution {
-public:
-    int uniquePaths(int m, int n) {
-        vector<vector<int>>dp (m,vector<int>(n,-1));
-        
-        int res= calc(dp,0,0,m-1,n-1);
-        return res;
-    }
-    
-    int calc(vector<vector<int>>dp,int i, int j, int m, int n){
-        
-        if(dp[i][j]!=-1)
-            return dp[i][j];
-        
-        if(i==m & j==n)
-            return 1;
-        else{
-            int r=0,d=0;
-            if(i<m)
-                r=calc(dp,i+1,j,m,n);
-            if(j<n)
-                d=calc(dp,i,j+1,m,n);
             
             return dp[i][j]=r+d;
         }
