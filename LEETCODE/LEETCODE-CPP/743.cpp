@@ -28,7 +28,7 @@ public:
                 int edgeW=it.second;
 
                 if(dis+edgeW < dist[adjNode]){
-                    dist[adjNode ]= dis+edgeW;
+                    dist[adjNode]= dis+edgeW;
                     pq.push({dis+edgeW,adjNode});
                 }
             }
