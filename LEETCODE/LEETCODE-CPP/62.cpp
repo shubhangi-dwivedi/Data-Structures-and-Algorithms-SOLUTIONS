@@ -1,7 +1,31 @@
 //62. Unique Paths
 //https://leetcode.com/problems/unique-paths/
 
-//Method-1 (dp-tabulation)
+//Method-1 Brute force recursion
+class Solution {
+public:
+    
+    int uniquePaths(int m, int n) {
+        int paths=0;
+        helper(m-1,n-1,paths,0,0);
+
+        return paths;
+    }
+
+    void helper(int m, int n, int &paths, int i,int j){
+        if(i==m && j==n){
+            paths++;
+            return;
+        }
+        
+        if(i<m)
+            helper(m,n,paths,i+1,j);
+        if(j<n)
+        helper(m,n,paths,i,j+1);
+    }
+};
+
+//Method-2 (dp-tabulation)
 class Solution {
 public:
     int uniquePaths(int m, int n) {
@@ -23,7 +47,7 @@ public:
 };
 
 
-//Method-2 (dp-memoization)
+//Method-3 (dp-memoization)
 class Solution {
 public:
     
