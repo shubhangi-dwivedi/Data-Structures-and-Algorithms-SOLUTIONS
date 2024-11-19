@@ -1,6 +1,7 @@
 //35. Search Insert Position
 //https://leetcode.com/problems/search-insert-position/
 
+//Method-1 Binary search
 class Solution {
 public:
     int searchInsert(vector<int>& nums, int target) {
