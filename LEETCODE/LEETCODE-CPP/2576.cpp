@@ -40,3 +40,35 @@ public:
         return res==ops;
     }
 };
+
+
+//Methos-2 using sort and two pointers
+class Solution {
+public:
+    int maxNumOfMarkedIndices(vector<int>& nums) {
+        int n=nums.size();
+        int left=0, right=n/2,count=0;
+
+
+        sort(nums.begin(),nums.end());
+
+        //keeping left<n/2 so that we are not checking already indexes marked because of right
+        while(right<n && left <n/2){
+            if(2*nums[left]<=nums[right]){
+                count++;
+                left++;                
+            }
+
+            right++;
+        }
+
+        return 2*count;
+    }
+};
+   
+// 0 1 2 3 4
+// 1,2,3,4,6
+// i   j        0,2 (resp.)
+//   i   j      1,3 (resp.)
+//     i   j    2,4 (resp. )  
+// x(wrong ans if n/2 condition is not considered as element at the i=2 is already visited prev. when i=0,j=2
