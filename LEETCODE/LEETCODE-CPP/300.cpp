@@ -1,7 +1,7 @@
 //300. Longest Increasing Subsequence
 //https://leetcode.com/problems/longest-increasing-subsequence/
 
-//Method-1 (DP) (Time complexity - O(n^2))
+//Method-1 (DP-tabulation) (Time complexity - O(n^2))
 class Solution {
 public:
     int lengthOfLIS(vector<int>& nums) {
@@ -27,7 +27,7 @@ public:
         
 };
 
-//Method-2 DP
+//Method-2 (DP-memoization)
 class Solution {
 public:
     int dp[2505][2505];
