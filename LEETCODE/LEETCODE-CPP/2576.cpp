@@ -42,7 +42,7 @@ public:
 };
 
 
-//Methos-2 using sort and two pointers
+//Method-2 using sort and two pointers
 class Solution {
 public:
     int maxNumOfMarkedIndices(vector<int>& nums) {
