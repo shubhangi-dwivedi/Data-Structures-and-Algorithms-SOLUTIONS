@@ -26,3 +26,6 @@ public:
         return true;
     }
 };
+
+
+//Method-2
