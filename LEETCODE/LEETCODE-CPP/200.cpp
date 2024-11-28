@@ -42,7 +42,7 @@ public:
 };
 
 
-//Methos-2 (DFS)
+//Method-2 (DFS)
 class Solution {
 public:
     int numIslands(vector<vector<char>>& grid) {
@@ -81,7 +81,7 @@ public:
     }
 };
 
-//Methos-2 (DFS) (clean code)
+//Method-3 (DFS) (clean code)
 class Solution {
     int dx[4]={-1,1,0,0};
     int dy[4]={0,0,-1,1};
