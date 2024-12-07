@@ -1,7 +1,7 @@
-//https://leetcode.com/problems/3sum/
 //15. 3Sum
+//https://leetcode.com/problems/3sum/
 
-//Using 2 pointers
+//Method -1 Using 2 pointers
 class Solution {
 public:
     vector<vector<int>> threeSum(vector<int>& nums) {
