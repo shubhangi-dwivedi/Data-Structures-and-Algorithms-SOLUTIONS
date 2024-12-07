@@ -16,7 +16,7 @@ public:
     }
 };
 
-//Method -2 optimized
+//Method -2 using prefix sum (optimized)
 class Solution {
 public:
     int maxProduct(vector<int>& nums) {
