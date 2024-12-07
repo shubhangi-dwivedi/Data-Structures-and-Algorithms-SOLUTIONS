@@ -28,7 +28,7 @@ public:
 };
 
 
-//Method-2 using prefix sum
+//Method-2 using prefix sum/sweep line
 class Solution {
 public:
     bool isZeroArray(vector<int>& nums, vector<vector<int>>& queries) {
