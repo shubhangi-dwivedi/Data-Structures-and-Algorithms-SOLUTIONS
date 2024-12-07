@@ -25,26 +25,20 @@ public:
 class Solution {
 public:
     int lengthOfLongestSubstring(string s) {
-        int n=s.length(), ans=INT_MIN;
-        set<char>st;
-
-        if(n==0)
-            return 0;
-        if(n==1){
-            return 1;
-        }
-
-        int j=0;
+        int n=s.length();
+        set<char> st;
+        
+        int j=0, ans=0;
         for(int i=0;i<n;i++){
-
             while(st.find(s[i])!=st.end()){
                 st.erase(s[j]);
                 j++;
             }
-
+            
             st.insert(s[i]);
-            ans=max(ans,j-i+1);
+            ans=max(ans,i-j+1);
         }
+        
         return ans;
     }
 };

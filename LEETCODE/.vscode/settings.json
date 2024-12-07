@@ -1,6 +1,7 @@
 {
     "files.associations": {
         "*.ejs": "html",
-        "vector": "cpp"
+        "vector": "cpp",
+        "xutility": "cpp"
     }
 }
