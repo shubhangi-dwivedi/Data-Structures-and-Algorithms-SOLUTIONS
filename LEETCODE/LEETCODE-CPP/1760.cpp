@@ -1,6 +1,7 @@
 //1760. Minimum Limit of Balls in a Bag
 //https://leetcode.com/problems/minimum-limit-of-balls-in-a-bag/
 
+//Method-1 using binary search
 class Solution {
 public:
     int minimumSize(vector<int>& nums, int maxOperations) {
