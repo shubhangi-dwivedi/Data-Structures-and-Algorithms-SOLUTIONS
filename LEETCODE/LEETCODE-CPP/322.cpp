@@ -1,7 +1,41 @@
 //322. Coin Change
 //https://leetcode.com/problems/coin-change/
 
-//Method-1 tabulation (space: O(m*n), time: O(m*n))
+//Method-1 using recursion (TLE)
+class Solution {
+public:
+    int coinChange(vector<int>& coins, int amount) {
+        int n=coins.size();
+        
+        int result=helper(coins, amount, 0, n);
+        
+        return result==INT_MAX ? -1 : result;
+    }
+    
+    int helper(vector<int>& coins, int amount, int i, int n){
+
+        if(amount==0){
+            return 0;
+        }
+        
+        if (i >= n || amount < 0) {
+            return INT_MAX; 
+        }
+        
+        int same_coin=helper(coins, amount-coins[i], i, n);
+
+        int next_coin=helper(coins, amount, i+1, n);
+
+        
+        if(same_coin!=INT_MAX){
+            same_coin+=1;
+        }
+        
+        return min(same_coin, next_coin);
+    }
+};
+
+//Method-2 tabulation (space: O(m*n), time: O(m*n))
 class Solution {
 public:
     int coinChange(vector<int>& coins, int amount) {
@@ -14,15 +48,6 @@ public:
         
         for(int i=1;i<m+1;i++)
             dp[i][0]=0;
-        
-        /*
-        for(int j=1;j<n+1;j++){
-            if(j%coins[0]==0)
-                dp[1][j]=j%coins[0];
-            else
-                dp[1][j]=INT_MAX-1;
-            
-        }*/
         
         for(int i=1;i<m+1;i++)
             for(int j=1;j<n+1;j++){
@@ -37,7 +62,7 @@ public:
 };
 
 
-//Method-2 DP-tabulation (space: O(amt), time=O(amt*n))
+//Method-3 DP-tabulation (space: O(amt), time=O(amt*n))
 class Solution {
 public:
     int coinChange(vector<int>& coins, int amt) {
@@ -56,5 +81,38 @@ public:
             }
         
         return dp[amt]==INT_MAX? -1:dp[amt];
+    }
+};
+
+//Method-4 DP-Memoization
+class Solution {
+public:
+    int coinChange(vector<int>& coins, int amount) {
+        int n=coins.size();
+        vector<vector<int>>dp(n+1,vector<int>(amount+1,-1));
+        
+        int result = helper(coins,amount,n-1,dp);
+        
+        return (result<INT_MAX-1)?result:-1;
+    }
+    
+    int helper(vector<int>& coins, int amount,int n, vector<vector<int>> &dp){
+        if(amount==0){
+            return 0;
+        }
+        
+        if(n<0 || amount<0){
+            return INT_MAX-1;
+        }
+        
+        if(dp[n][amount]!=-1){ 
+            return dp[n][amount];
+        }
+        
+        int diff_coin = helper(coins,amount,n-1,dp);
+        int same_coin = 1+helper(coins,amount-coins[n],n,dp);
+        
+        return dp[n][amount] = min(diff_coin,same_coin);
+                
     }
 };
