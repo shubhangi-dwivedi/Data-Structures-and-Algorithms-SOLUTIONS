@@ -1,7 +1,7 @@
 //347. Top K Frequent Elements
 //https://leetcode.com/problems/top-k-frequent-elements/
 
-//using maxheap
+//Method-1 using maxheap
 class Solution {
 public:
     vector<int> topKFrequent(vector<int>& nums, int k) {
@@ -24,5 +24,37 @@ public:
         
         return res;
         
+    }
+};
+
+//Method-2 using heap(clear code)
+class Solution {
+public:
+    vector<int> topKFrequent(vector<int>& nums, int k) {
+        priority_queue<pair<int,int>,vector<pair<int,int>>,greater<pair<int,int>>>pq;
+        map<int,int>mp;
+        for(int i=0;i<nums.size();i++){
+            mp[nums[i]]++;
+        }
+        
+        for(auto x:mp){
+            pq.push({x.second,x.first});
+            mp.erase(x.first);
+
+            if(pq.size() == k) break;
+        }
+        
+        for(auto x:mp){
+            if(pq.top().first < x.second) {
+                pq.pop();
+                pq.push({x.second,x.first});
+            }
+        }
+        vector<int>ans;
+        while(pq.size()) {
+            ans.push_back(pq.top().second);
+            pq.pop();
+        }
+        return ans;
     }
 };
