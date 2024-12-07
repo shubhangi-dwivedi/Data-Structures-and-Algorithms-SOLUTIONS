@@ -104,25 +104,32 @@ public:
 //Method-4 (2 pointer approach) (optimized solution) (time-O(n))
 class Solution {
 public:
-    int dp[101][10001];
-    
     bool isSubsequence(string s, string t) {
         int m=s.length(), n=t.length();
-        int count=0;
-        int i=0,j=0;
-
-        while(i<m && j<n){
+        
+        int i=0, j=0;
+        while(j<n){
             if(s[i]==t[j]){
-                count++;
                 i++,j++;
             }
-            else
+            else{
                 j++;
+            }
+            
+            if(i==m){
+            return true;
+        }
         }
         
-        if(count==m)
+        //placing it outside if input is ""
+        /*
+        s=""
+        t=""
+        */
+        if(i==m){
             return true;
-        else 
-            return false;
+        }
+        
+        return false;
     }
 };
