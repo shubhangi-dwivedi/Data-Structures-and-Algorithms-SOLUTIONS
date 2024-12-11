@@ -1,5 +1,8 @@
 //20. Valid Parentheses
+//https://leetcode.com/problems/valid-parentheses/
 
+
+//Method-1 using stack
 class Solution {
 public:
     bool isValid(string s) {
