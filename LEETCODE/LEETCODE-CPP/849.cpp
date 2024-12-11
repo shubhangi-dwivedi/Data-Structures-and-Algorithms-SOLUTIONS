@@ -51,7 +51,7 @@ public:
 };
 
 
-//Method-2 (similar to counting consecutive zeroes)             [   TC=O(n) ,   SC=O(n)     ]
+//Method-2 (similar to counting consecutive zeroes)             [   TC=O(n) ,   SC=O(1)     ]
 class Solution {
 public:
     int maxDistToClosest(vector<int>& seats) {
