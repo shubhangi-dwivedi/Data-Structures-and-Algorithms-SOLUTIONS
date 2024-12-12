@@ -33,7 +33,8 @@ public:
          for(int i = 0; i < n; i++) {
             if(seats[i] == 0) {
                 int min_closest;
-
+                // if(left[i] == INT_MAX && right[i] == INT_MAX)
+                //     min_closest = n;
                 if(left[i] == INT_MAX)
                     min_closest = right[i];
                 else if(right[i] == INT_MAX)
