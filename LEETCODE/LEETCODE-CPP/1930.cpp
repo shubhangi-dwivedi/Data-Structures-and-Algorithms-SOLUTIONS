@@ -32,3 +32,45 @@ public:
         return st.size();
     }
 };
+
+//Method-2 (Marking indices - optimized)
+class Solution {
+public:
+    int countPalindromicSubsequence(string s) {
+        int m=s.length();
+
+        vector<vector<int>> charCount(26);
+
+        for(int i=0;i<m;i++){
+            charCount[s[i]-'a'].push_back(i);
+        }
+
+        int palCount=0;
+        for(int i=0;i<26;i++){
+            if(charCount[i].size()>1){
+
+                int x=charCount[i][charCount[i].size()-1]-charCount[i][0]-1;
+                
+                vector<bool>vis(26,false);
+                if(x>=1){
+                    int a=charCount[i][0]+1;
+                    int b=charCount[i][charCount[i].size()-1];
+                    
+                    while(a<b){
+                        vis[s[a]-'a']=true;
+
+                        a++;
+                    }
+                }
+
+                for(int j=0;j<26;j++){
+                    if(vis[j]==true){
+                        palCount++;
+                    }
+                }
+            }
+        }
+
+        return palCount;
+    }
+};
