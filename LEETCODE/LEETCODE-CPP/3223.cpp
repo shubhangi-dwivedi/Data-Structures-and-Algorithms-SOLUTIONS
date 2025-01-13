@@ -6,7 +6,7 @@ public:
     int minimumLength(string s) {
         int n=s.length();
 
-        unordered_map<char, int>m;
+        unordered_map<char,int>m;
         for(int i=0;i<n;i++){
             m[s[i]]++;
         }
