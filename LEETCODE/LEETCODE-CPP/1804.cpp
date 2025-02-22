@@ -12,9 +12,9 @@ class TrieNode{
         for(int i=0;i<26;i++) {
             child[i]=NULL;  // Initialize all child pointers to NULL
         }
-        wordEnd=false;
-        countWord=0;
-        countPrefix=0;
+        // wordEnd=false;
+        // countWord=0;
+        // countPrefix=0;
     }
 
     bool containsKey(char ch){
