@@ -17,7 +17,6 @@ class Solution:
                 sum=nums[i]+nums[j]+nums[k]
 
                 if sum==0:
-                    #append in list
                     res.append([nums[i], nums[j], nums[k]])
                     j+=1
 
