@@ -26,7 +26,6 @@ class Solution:
                     if sum==target:
                         res.append([nums[i],nums[j],nums[k],nums[l]])
                         k+=1
-                        # l-=1
 
                         while k<l and nums[k]==nums[k-1]:
                                 k+=1
@@ -39,6 +38,5 @@ class Solution:
                     
                     else:
                         l-=1
-
 
         return res    
