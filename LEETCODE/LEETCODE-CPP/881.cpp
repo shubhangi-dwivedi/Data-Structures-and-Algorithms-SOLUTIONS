@@ -1,7 +1,7 @@
 //881. Boats to Save People
 //https://leetcode.com/problems/boats-to-save-people/
 
-//Method-1 (Greedy approach) (Time complexity - O(n),  Space complexity - O(1))
+//Method-1 (2-pointers/Greedy approach) (Time complexity - O(n),  Space complexity - O(1))
 class Solution {
 public:
     int numRescueBoats(vector<int>& people, int limit) {
