@@ -1,5 +1,7 @@
 //633. Sum of Square Numbers
+//https://leetcode.com/problems/sum-of-square-numbers/description/
 
+//Method-1 (2 pointers)
 class Solution {
 public:
     bool judgeSquareSum(int c) {
