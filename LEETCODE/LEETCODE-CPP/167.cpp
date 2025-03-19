@@ -1,7 +1,7 @@
 //167. Two Sum II - Input array is sorted
+//https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/description/
 
-
-//method 1
+//Method 1
 class Solution {
 public:
     vector<int> twoSum(vector<int>& numbers, int target) 
@@ -34,35 +34,30 @@ public:
 };
 
 
-//method 2
+//Method 2 (2-pointers)
 class Solution {
-public:
-    vector<int> twoSum(vector<int>& numbers, int target) 
-    {
-         int n=numbers.size();
-        vector <pair<int,int>> res(n);
-        
-        
-        for(int i=0;i<n;i++)
-            res[i]={numbers[i],i};
-       
-        
-        vector<int> v;
-        int j=n-1;
-        for(int i=0;i<n;)
-        {
-            if(res[i].first+res[j].first==target)
-            {
-                v.push_back(res[i].second+1);
-                v.push_back(res[j].second+1);
-                break;
+    public:
+        vector<int> twoSum(vector<int>& nums, int target) {
+            int n=nums.size(), start=0, end=n-1;
+    
+            vector<int> res;
+            while(start<end){
+                int sum=nums[start]+nums[end];
+    
+                if(sum==target){
+                    res.push_back(start+1);
+                    res.push_back(end+1);
+    
+                    break;
+                }
+                else if(sum<target){
+                    start++;
+                }
+                else{
+                    end--;
+                }
             }
-            else if(res[i].first+res[j].first>target)
-                j--;
-            else
-                i++;
+            
+            return res;
         }
-        
-        return v;
-        }
-};
+    };
