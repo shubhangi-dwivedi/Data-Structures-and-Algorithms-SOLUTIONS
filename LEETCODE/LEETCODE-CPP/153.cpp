@@ -1,14 +1,13 @@
 // 153. Find Minimum in Rotated Sorted Array
 // https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/description/
 
+// Method-1 Binary Search
 class Solution
 {
 public:
     int findMin(vector<int> &nums)
     {
-        int n = nums.size();
-        int start = 0, end = n - 1;
-        int ans = INT_MAX;
+        int start = 0, end = nums.size() - 1;
 
         while (start < end)
         {
