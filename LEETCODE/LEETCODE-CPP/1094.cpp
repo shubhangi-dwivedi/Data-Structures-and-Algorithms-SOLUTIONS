@@ -34,3 +34,41 @@ public:
         return true;
     }
 };
+
+// Method-2 Prefix sum
+class Solution
+{
+public:
+    bool carPooling(vector<vector<int>> &trips, int capacity)
+    {
+        int n = trips.size();
+        if (n == 0)
+            return 0;
+
+        vector<long long> sum(1001);
+        int max_idx = 0;
+        for (auto v : trips)
+        {
+            sum[v[1]] += v[0];
+            sum[v[2]] -= v[0];
+
+            max_idx = max(max_idx, v[2]);
+        }
+
+        if (sum[0] > capacity)
+        {
+            return false;
+        }
+        for (int i = 1; i < max_idx; i++)
+        {
+            sum[i] += sum[i - 1];
+
+            if (sum[i] > capacity)
+            {
+                return false;
+            }
+        }
+
+        return true;
+    }
+};
