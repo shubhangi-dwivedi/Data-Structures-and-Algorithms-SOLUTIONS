@@ -22,7 +22,7 @@ class Solution {
             int count = entry.getValue();
 
             if (word.charAt(0) == word.charAt(1) && count > 0) {
-                result += 2;
+                result += 2*count;
                 break;
             }
         }
