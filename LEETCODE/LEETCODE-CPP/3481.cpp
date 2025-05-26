@@ -16,7 +16,7 @@ public:
 
         for (int i = 0; i < text.size();)
         {
-            string key(1, text[i]);
+            string key(1, text[i]); // converts the character at position i into a string (since the map uses string keys)
 
             if (text[i] == '%')
             {
@@ -24,6 +24,8 @@ public:
             }
             else if (mp.find(key) != mp.end())
             {
+                // Remove the original character
+                // Insert the mapped string at the same position
                 text.erase(i, 1);
                 text.insert(i, mp[key]);
             }
