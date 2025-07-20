@@ -57,3 +57,48 @@ class Solution {
         return dummy;
     }
 }
+
+//Method - 2 using reversed LL
+class Solution {
+    public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
+        ListNode list1 = reverse(l1);
+        ListNode list2 = reverse(l2);
+
+        ListNode ans = null;
+        int carry = 0, sum = 0;
+
+        while (list1 != null || list2 != null || carry != 0) {
+            sum = carry;
+
+            if (list1 != null) {
+                sum += list1.val;
+                list1 = list1.next;
+            }
+
+            if (list2 != null) {
+                sum += list2.val;
+                list2 = list2.next;
+            }
+
+            carry = sum / 10;
+            ListNode newNode = new ListNode(sum % 10);
+            newNode.next = ans;
+            ans = newNode;
+        }
+
+        return ans;
+    }
+
+    private ListNode reverse(ListNode head) {
+        ListNode prev = null;
+
+        while (head != null) {
+            ListNode nextNode = head.next;
+            head.next = prev;
+            prev = head;
+            head = nextNode;
+        }
+
+        return prev;
+    }
+}
