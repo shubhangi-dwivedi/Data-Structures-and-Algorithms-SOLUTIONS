@@ -103,7 +103,7 @@ public:
     }
 };
 
-// Method-2 (clear code of Method-1)
+// Method- 3 (clear code of method -2 )
 class Solution
 {
 public:
