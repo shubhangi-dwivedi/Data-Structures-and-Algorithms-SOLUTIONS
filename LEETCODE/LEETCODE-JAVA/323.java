@@ -1,7 +1,7 @@
 // 323. Number of Connected Components in an Undirected Graph
 // https://leetcode.com/problems/number-of-connected-components-in-an-undirected-graph/
 
-// Method-1 dfs
+// Method-1 dfs and adjcency list
 class Solution {
     public int countComponents(int n, int[][] edges) {
         List<List<Integer>> adj=new ArrayList<>();
