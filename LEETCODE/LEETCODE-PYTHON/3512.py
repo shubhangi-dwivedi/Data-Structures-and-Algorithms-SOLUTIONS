@@ -10,4 +10,10 @@ class Solution:
 
         return sum%k
 
+
+# Method-2 using sum()
+class Solution:
+    def minOperations(self, nums: List[int], k: int) -> int:
+        return sum(nums)%k
+
         
