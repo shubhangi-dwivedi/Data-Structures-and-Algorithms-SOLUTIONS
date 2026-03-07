@@ -1,6 +1,7 @@
 # 1. Two Sum
 # https://leetcode.com/problems/two-sum/description/
 
+# Method-1 brute force
 class Solution:
     def twoSum(self, nums: List[int], target: int) -> List[int]:
         n=len(nums)
@@ -10,7 +11,7 @@ class Solution:
                     return [i,j]
         return []
     
-
+# Metod-2 using maps
 class Solution:
     def twoSum(self, nums: List[int], target: int) -> List[int]:
         numsMap={}
@@ -26,7 +27,8 @@ class Solution:
                 return [i,numsMap[x]]
 
         return []
-    
+
+# Method-3 using maps(optimized) 
 class Solution:
     def twoSum(self, nums: List[int], target: int) -> List[int]:
         numsMap={}
