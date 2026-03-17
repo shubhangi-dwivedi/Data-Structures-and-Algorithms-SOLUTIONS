@@ -1,6 +1,7 @@
 #15. 3Sum
 #https://leetcode.com/problems/3sum/
 
+#Method-1 using Two pointers (TC-O(n^2))
 class Solution:
     def threeSum(self, nums: List[int]) -> List[List[int]]:
         res = []
