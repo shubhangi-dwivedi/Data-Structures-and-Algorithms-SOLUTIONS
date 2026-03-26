@@ -1,7 +1,7 @@
 # 994. Rotting Oranges
 # https://leetcode.com/problems/rotting-oranges/description/
 
-# Method-1 BFS (TC-O(m*n))
+# Method-1 BFS (TC-O(m*n), SC-O(m*n))
 class Solution:
     def orangesRotting(self, grid: List[List[int]]) -> int:
         m,n=len(grid),len(grid[0])
