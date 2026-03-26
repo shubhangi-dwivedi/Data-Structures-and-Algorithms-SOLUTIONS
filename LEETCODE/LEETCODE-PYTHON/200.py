@@ -4,56 +4,54 @@
 # Method - 1 using dfs
 class Solution:
     def numIslands(self, grid: List[List[str]]) -> int:
-        m,n =len(grid), len(grid[0])
-        vis=defaultdict(bool)
+        m,n=len(grid), len(grid[0])
+        count=0
+        dir=[(0,1),(0,-1),(1,0),(-1,0)]
 
-        dir= [(-1,0),(1,0),(0,-1),(0,1)]
-        
-        def dfs(i,j):
-            if i<0 or j<0 or i>=m or j>=n or vis[(i,j)] or grid[i][j]=='0':
+        def dfs(i, j):
+            if i<0 or i>=m or j<0 or j>=n or grid[i][j]=="0":
                 return
 
-            vis[(i,j)]=True
+            grid[i][j]="0"
+
             for dx, dy in dir:
                 dfs(i+dx,j+dy)
+            
 
-
-        count=0
-        for i in range(m):
-            for j in range(n):
-                if not vis[(i,j)] and grid[i][j]=='1':
-                    count+=1
+        for i in range(len(grid)):
+            for j in range(len(grid[0])):
+                if grid[i][j]=="1":
                     dfs(i,j)
+                    count+=1
 
         return count
     
 # Method -2 using bfs
 class Solution:
     def numIslands(self, grid: List[List[str]]) -> int:
-        m,n =len(grid), len(grid[0])
-        vis=defaultdict(bool)
-
-        dir= [(-1,0),(1,0),(0,-1),(0,1)]
-        
-        def bfs(i,j):
-            q= deque()
-            q.append((i,j))
-            grid[i][j] = '0'  # mark visited by sinking the island
-
-            while(q):
-                x,y=q.popleft()
-                for dx, dy in dir:
-                    tempx, tempy= x+dx, y+dy
-                    if 0<=tempx<m and 0<=tempy<n and grid[tempx][tempy]=='1':
-                        grid[tempx][tempy]='0'
-                        q.append((tempx, tempy))
-
-
+        m,n=len(grid), len(grid[0])
         count=0
-        for i in range(m):
-            for j in range(n):
-                if grid[i][j] == '1':
-                    bfs(i, j)
-                    count += 1
+        dir=[(0,1),(0,-1),(1,0),(-1,0)]
+
+        def bfs(i,j):
+            q=deque()
+            q.append((i,j))
+            grid[i][j]="0"
+
+            while q:
+                x,y=q.popleft()
+
+                for dx, dy in dir:
+                    temp_x, temp_y = x+dx, y+dy
+
+                    if 0<=temp_x<m and 0<=temp_y<n and grid[temp_x][temp_y]=="1":
+                        grid[temp_x][temp_y]="0"
+                        q.append((temp_x, temp_y))
+
+        for i in range(len(grid)):
+            for j in range(len(grid[0])):
+                if grid[i][j]=="1":
+                    bfs(i,j)
+                    count+=1
 
         return count
