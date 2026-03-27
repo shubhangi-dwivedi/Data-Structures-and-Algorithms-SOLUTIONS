@@ -1,7 +1,7 @@
 # 207. Course Schedule
 # https://leetcode.com/problems/course-schedule/description 
 
-# Methid-1 using dfs (cycle detection)
+# Methid-1 using dfs (cycle detection) (TC-O(v+e), SC-O(v))
 class Solution:
     def canFinish(self, numCourses: int, prerequisites: List[List[int]]) -> bool:
         adj = defaultdict(list)
