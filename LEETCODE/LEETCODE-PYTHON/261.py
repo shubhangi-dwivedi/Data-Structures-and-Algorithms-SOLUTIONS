@@ -62,4 +62,4 @@ class Solution:
                 parent[neighbor]=node
                 q.append(neighbor)
                 
-        return len(parent)==ns
+        return len(parent)==n
