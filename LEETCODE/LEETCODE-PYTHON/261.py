@@ -35,3 +35,31 @@ class Solution:
             return True
 
         return dfs(0,-1) and len(seen)==n
+
+# Method-2 using bfs
+class Solution:
+    def validTree(self, n: int, edges: List[List[int]]) -> bool:
+        if len(edges)!=n-1:
+            return False
+
+        adj=[[] for _ in range(n)]
+        for a,b in edges:
+            adj[a].append(b)
+            adj[b].append(a)
+
+        parent={0:-1}
+        q=deque([0])
+
+        while q:
+            node=q.popleft()
+
+            for neighbor in adj[node]:
+                if neighbor==parent[node]:
+                    continue
+                if neighbor in parent:
+                    return False
+
+                parent[neighbor]=node
+                q.append(neighbor)
+                
+        return len(parent)==ns
