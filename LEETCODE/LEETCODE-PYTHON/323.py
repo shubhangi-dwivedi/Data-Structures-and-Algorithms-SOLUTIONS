@@ -1,7 +1,7 @@
 # 323. Number of Connected Components in an Undirected Graph
 # https://leetcode.com/problems/number-of-connected-components-in-an-undirected-graph/
 
-# Method-1 dfs and adjcency list
+# Method-1 dfs and adjcency list (TC-O(v+e))
 class Solution:
     def countComponents(self, n: int, edges: List[List[int]]) -> int:
         graph= collections.defaultdict(list)
