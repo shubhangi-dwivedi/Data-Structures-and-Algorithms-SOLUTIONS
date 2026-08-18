@@ -18,3 +18,4 @@ class Solution:
 current = processorTime[n - 1 - i] + max(tasks[j:j+4])
 min_processingTime = max(min_processingTime, current)
 
+
